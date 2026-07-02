@@ -6,6 +6,10 @@
     { id: 'starters', label: 'Starters' },
     { id: 'mains', label: 'Main Course' },
     { id: 'breads', label: 'Breads & Rice' },
+    { id: 'pizza', label: 'Pizza' },
+    { id: 'burgers', label: 'Burgers' },
+    { id: 'asian', label: 'Asian' },
+    { id: 'salads', label: 'Salads & Bowls' },
     { id: 'desserts', label: 'Desserts' },
     { id: 'drinks', label: 'Beverages' }
   ];

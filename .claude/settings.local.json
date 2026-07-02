@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(pkill -f \"http-server -p 4177\")"
+      "Bash(pkill -f \"http-server -p 4177\")",
+      "Read(//c/Users/91939/Downloads/FOODIE--main/FOODIE--main/**)",
+      "Read(//c/Users/91939/Downloads/FOODIE--main/FOODIE--main/js/**)",
+      "Bash(node --check js/data.js)",
+      "Bash(node -e ' *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }

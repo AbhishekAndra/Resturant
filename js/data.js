@@ -63,7 +63,48 @@ const MENU_ITEMS = [
 
   { id: 'm17', name: 'Masala Chai', category: 'drinks', price: 59, veg: true, popular: false, rating: 4.5, desc: 'Spiced Indian tea brewed with milk and cardamom.', emoji: '🍵' },
   { id: 'm18', name: 'Mango Lassi', category: 'drinks', price: 99, veg: true, popular: true, rating: 4.8, desc: 'Chilled yogurt smoothie blended with Alphonso mango.', emoji: '🥭' },
-  { id: 'm19', name: 'Fresh Lime Soda', category: 'drinks', price: 79, veg: true, popular: false, rating: 4.3, desc: 'Refreshing lime soda, sweet or salted.', emoji: '🥤' }
+  { id: 'm19', name: 'Fresh Lime Soda', category: 'drinks', price: 79, veg: true, popular: false, rating: 4.3, desc: 'Refreshing lime soda, sweet or salted.', emoji: '🥤' },
+
+  { id: 'm20', name: "Chef's Tasting Plate", category: 'mains', price: 349, veg: true, popular: false, rating: 4.6, desc: 'A curated small plate with seasonal greens and a light citrus dressing.', emoji: '🍽️' },
+  { id: 'm21', name: 'Spicy Red Curry', category: 'mains', price: 289, veg: true, popular: false, rating: 4.5, desc: 'Fiery coconut-based curry loaded with fresh red chillies and herbs.', emoji: '🍲' },
+  { id: 'm47', name: 'Penne Arrabbiata', category: 'mains', price: 279, veg: true, popular: false, rating: 4.5, desc: 'Penne pasta tossed in a spicy garlic tomato sauce with fresh basil.', emoji: '🍝' },
+  { id: 'm50', name: 'Masala Dosa', category: 'mains', price: 129, veg: true, popular: true, rating: 4.7, desc: 'Crispy golden dosa filled with spiced potato masala, served with sambar and chutneys.', emoji: '🥞' },
+  { id: 'm51', name: 'Traditional Thali', category: 'mains', price: 249, veg: true, popular: true, rating: 4.6, desc: 'A wholesome combo plate with roti, mixed curries and a sweet lassi.', emoji: '🍛' },
+  { id: 'm52', name: 'Pan-Seared Salmon', category: 'mains', price: 449, veg: false, popular: false, rating: 4.7, desc: 'Salmon fillets in a creamy citrus sauce, finished with fresh herbs.', emoji: '🐟' },
+
+  { id: 'm26', name: 'Margherita Pizza', category: 'pizza', price: 299, veg: true, popular: true, rating: 4.7, desc: 'Classic Neapolitan pizza with tomato, mozzarella and fresh basil.', emoji: '🍕' },
+  { id: 'm39', name: 'BBQ Chicken Pizza', category: 'pizza', price: 449, veg: false, popular: false, rating: 4.8, desc: 'Smoky BBQ base with grilled chicken, red onions and bell peppers.', emoji: '🍕' },
+  { id: 'm48', name: 'Pepperoni Pizza', category: 'pizza', price: 399, veg: false, popular: true, rating: 4.9, desc: 'Loaded with premium pepperoni on a rich tomato and mozzarella base.', emoji: '🍕' },
+
+  { id: 'm27', name: 'Veggie Delight Burger', category: 'burgers', price: 199, veg: true, popular: true, rating: 4.5, desc: 'Crispy veggie patty with fresh lettuce, tomato and house mayo.', emoji: '🍔' },
+  { id: 'm34', name: 'BBQ Bacon Burger', category: 'burgers', price: 299, veg: false, popular: false, rating: 4.7, desc: 'Double patty stacked with smoky bacon and tangy BBQ sauce.', emoji: '🍔' },
+  { id: 'm40', name: 'Classic Cheeseburger', category: 'burgers', price: 249, veg: false, popular: true, rating: 4.6, desc: 'A juicy grilled patty with melted cheese, pickles and onion.', emoji: '🍔' },
+
+  { id: 'm28', name: 'Orange Glazed Chicken', category: 'asian', price: 279, veg: false, popular: false, rating: 4.5, desc: 'Crispy chicken tossed in a sweet-tangy orange glaze with broccoli.', emoji: '🥢' },
+  { id: 'm33', name: 'Sushi Platter', category: 'asian', price: 449, veg: false, popular: true, rating: 4.7, desc: 'Chef\'s selection of nigiri and maki rolls, fresh daily.', emoji: '🍣' },
+  { id: 'm36', name: 'Salmon Sashimi Platter', category: 'asian', price: 499, veg: false, popular: false, rating: 4.8, desc: 'Delicate salmon sashimi sliced fresh, served with wasabi and soy.', emoji: '🍣' },
+  { id: 'm38', name: 'Steamed Dumplings', category: 'asian', price: 199, veg: true, popular: true, rating: 4.6, desc: 'Soft steamed dumplings with a savoury vegetable filling.', emoji: '🥟' },
+  { id: 'm42', name: 'Shrimp Ramen Bowl', category: 'asian', price: 329, veg: false, popular: false, rating: 4.7, desc: 'Rich noodle broth with shrimp, soft egg and seasonal greens.', emoji: '🍜' },
+  { id: 'm44', name: 'Chicken Fried Rice', category: 'asian', price: 219, veg: false, popular: true, rating: 4.4, desc: 'Wok-tossed fried rice with juicy chicken and seasonal vegetables.', emoji: '🍚' },
+
+  { id: 'm24', name: "Chef's Sharing Platter", category: 'starters', price: 349, veg: false, popular: false, rating: 4.5, desc: 'An assortment of grilled meats and crispy bites, perfect for sharing.', emoji: '🍢' },
+  { id: 'm29', name: 'Crispy Golden Fries', category: 'starters', price: 129, veg: true, popular: true, rating: 4.5, desc: 'Classic golden fries, salted and served piping hot.', emoji: '🍟' },
+  { id: 'm37', name: 'Crispy Chicken Tenders', category: 'starters', price: 219, veg: false, popular: false, rating: 4.6, desc: 'Breaded chicken tenders fried golden, served with dip.', emoji: '🍗' },
+  { id: 'm43', name: 'Crispy Veg Samosas', category: 'starters', price: 99, veg: true, popular: true, rating: 4.7, desc: 'Golden fried pastry parcels filled with spiced potatoes and peas.', emoji: '🥟' },
+  { id: 'm49', name: 'Loaded Cheese Fries', category: 'starters', price: 179, veg: true, popular: false, rating: 4.6, desc: 'Crispy fries loaded with melted cheese and herbs.', emoji: '🍟' },
+
+  { id: 'm22', name: 'Superfood Salad Bowl', category: 'salads', price: 279, veg: true, popular: false, rating: 4.6, desc: 'Kale, avocado, egg and cherry tomato with a light vinaigrette.', emoji: '🥗' },
+  { id: 'm23', name: 'Garden Veggie Spread', category: 'salads', price: 249, veg: true, popular: false, rating: 4.4, desc: 'A colourful spread of fresh, crisp seasonal vegetables.', emoji: '🥗' },
+  { id: 'm25', name: 'Rainbow Buddha Bowl', category: 'salads', price: 299, veg: true, popular: true, rating: 4.7, desc: 'Avocado, chickpeas, sweet potato and greens with tahini dressing.', emoji: '🥗' },
+  { id: 'm31', name: 'Power Grain Bowl', category: 'salads', price: 319, veg: false, popular: false, rating: 4.6, desc: 'Quinoa and greens topped with seared salmon and cherry tomatoes.', emoji: '🥗' },
+
+  { id: 'm32', name: 'Brownie Ice Cream Delight', category: 'desserts', price: 219, veg: true, popular: true, rating: 4.8, desc: 'Warm fudge brownie topped with vanilla ice cream and caramel.', emoji: '🍫' },
+  { id: 'm35', name: 'Belgian Waffles', category: 'desserts', price: 189, veg: true, popular: false, rating: 4.7, desc: 'Crispy fluffy waffles served with berries and maple syrup.', emoji: '🧇' },
+  { id: 'm46', name: 'Funfetti Drip Cake', category: 'desserts', price: 249, veg: true, popular: false, rating: 4.8, desc: 'Celebration layer cake with sprinkles and a pink drip glaze.', emoji: '🎂' },
+
+  { id: 'm30', name: 'Mocktail Trio', category: 'drinks', price: 249, veg: true, popular: false, rating: 4.6, desc: 'Three signature fruit mocktails, served chilled with fresh garnish.', emoji: '🍹' },
+  { id: 'm41', name: 'Pomegranate Berry Smoothie', category: 'drinks', price: 179, veg: true, popular: false, rating: 4.6, desc: 'Fresh pomegranate and berries blended with mint.', emoji: '🍓' },
+  { id: 'm45', name: 'Green Detox Smoothie', category: 'drinks', price: 169, veg: true, popular: false, rating: 4.5, desc: 'Spinach, kiwi, apple and cucumber blended fresh.', emoji: '🥬' }
 ];
 
 const TESTIMONIALS = [
