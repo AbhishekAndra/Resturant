@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="heroTitle">
+  <title id="heroTitle">Steaming plate of Spice Route Kitchen signature curry with herbs and spices</title>
+  <defs>
+    <radialGradient id="heroBgGrad" cx="30%" cy="30%" r="90%">
+      <stop offset="0%" stop-color="#3a2415"/>
+      <stop offset="55%" stop-color="#241a10"/>
+      <stop offset="100%" stop-color="#150e08"/>
+    </radialGradient>
+    <radialGradient id="plateGrad" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#ffdca6"/>
+      <stop offset="100%" stop-color="#e8542e"/>
+    </radialGradient>
+    <linearGradient id="steamGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#heroBgGrad)"/>
+
+  <!-- scattered spice dots -->
+  <g fill="#f2a93c" opacity="0.35">
+    <circle cx="120" cy="120" r="5"/>
+    <circle cx="220" cy="80" r="3"/>
+    <circle cx="90" cy="260" r="4"/>
+    <circle cx="1480" cy="140" r="5"/>
+    <circle cx="1400" cy="240" r="3"/>
+    <circle cx="1520" cy="320" r="4"/>
+    <circle cx="1350" cy="700" r="4"/>
+    <circle cx="140" cy="720" r="4"/>
+    <circle cx="80" cy="600" r="3"/>
+  </g>
+
+  <!-- plate -->
+  <ellipse cx="1150" cy="560" rx="380" ry="380" fill="#0f0a06" opacity="0.4"/>
+  <circle cx="1150" cy="520" r="330" fill="url(#plateGrad)" opacity="0.92"/>
+  <circle cx="1150" cy="520" r="330" fill="none" stroke="#fffaf3" stroke-opacity="0.15" stroke-width="14"/>
+  <circle cx="1150" cy="520" r="230" fill="#c73e1d" opacity="0.55"/>
+
+  <!-- garnish -->
+  <g fill="#2f7d4f" opacity="0.85">
+    <ellipse cx="1060" cy="440" rx="18" ry="8" transform="rotate(-20 1060 440)"/>
+    <ellipse cx="1230" cy="460" rx="16" ry="7" transform="rotate(25 1230 460)"/>
+    <ellipse cx="1140" cy="600" rx="18" ry="8" transform="rotate(10 1140 600)"/>
+  </g>
+  <g fill="#c73e1d">
+    <ellipse cx="1200" cy="560" rx="10" ry="22" transform="rotate(30 1200 560)"/>
+  </g>
+
+  <!-- steam -->
+  <g stroke="url(#steamGrad)" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.7">
+    <path d="M1060 340 C1030 290 1090 260 1060 210 C1030 160 1090 130 1070 90"/>
+    <path d="M1160 330 C1130 280 1190 250 1160 200 C1130 150 1190 120 1170 80"/>
+    <path d="M1260 340 C1230 290 1290 260 1260 210 C1230 160 1290 130 1270 90"/>
+  </g>
+</svg>

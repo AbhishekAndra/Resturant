@@ -1,0 +1,83 @@
+/* Stackly — Login / Signin page styles */
+
+.auth-section {
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  padding-block: 3rem;
+  background: linear-gradient(160deg, var(--color-bg-alt), var(--color-bg));
+}
+.auth-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  max-width: 980px;
+  margin-inline: auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--color-surface);
+}
+.auth-visual {
+  background: linear-gradient(150deg, var(--color-bg-dark), #3a2415);
+  color: var(--color-text-on-dark);
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+}
+.auth-visual .emoji { font-size: 3rem; }
+.auth-visual h2 { color: #fff; }
+.auth-visual p { color: var(--color-text-on-dark-muted); }
+.auth-form-panel { padding: 3rem 2.75rem; }
+.auth-form-panel h1 { margin-bottom: 0.4rem; }
+.auth-subtitle { color: var(--color-text-light); margin-bottom: 1.75rem; }
+
+.demo-hint {
+  background: var(--color-bg-alt);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1.1rem;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+.demo-hint strong { color: var(--color-primary-dark); }
+
+.auth-switch { text-align: center; margin-top: 1.5rem; font-size: 0.92rem; color: var(--color-text-light); }
+.auth-switch a { color: var(--color-primary); font-weight: 600; }
+
+.role-tabs { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+.role-tab {
+  flex: 1;
+  min-height: 44px;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.role-tab.is-active { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
+
+.password-field { position: relative; }
+.password-toggle {
+  position: absolute;
+  right: 0.6rem; top: 50%;
+  transform: translateY(-50%);
+  background: none; border: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  min-height: 32px;
+  padding: 0 0.4rem;
+}
+
+@media (max-width: 860px) {
+  .auth-grid { grid-template-columns: 1fr; max-width: 480px; }
+  .auth-visual { display: none; }
+}
+@media (max-width: 480px) {
+  .auth-form-panel { padding: 2rem 1.5rem; }
+}

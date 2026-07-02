@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="aboutDishTitle">
+  <title id="aboutDishTitle">Flat-lay of a traditional Indian thali spread with curry, rice, naan and garnish</title>
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8542e"/>
+      <stop offset="100%" stop-color="#c73e1d"/>
+    </linearGradient>
+    <radialGradient id="plateGrad" cx="42%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#fffaf3"/>
+      <stop offset="100%" stop-color="#f2dfc4"/>
+    </radialGradient>
+    <radialGradient id="riceGrad" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#fffdf6"/>
+      <stop offset="100%" stop-color="#f6ecd4"/>
+    </radialGradient>
+    <radialGradient id="curryGrad" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ff8a5c"/>
+      <stop offset="100%" stop-color="#c73e1d"/>
+    </radialGradient>
+    <radialGradient id="dalGrad" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#f2c15c"/>
+      <stop offset="100%" stop-color="#d68d1f"/>
+    </radialGradient>
+    <radialGradient id="chutneyGrad" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#7ec98f"/>
+      <stop offset="100%" stop-color="#2f7d4f"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#bgGrad)"/>
+  <g opacity="0.14" fill="#fff">
+    <circle cx="90" cy="100" r="6"/>
+    <circle cx="150" cy="60" r="4"/>
+    <circle cx="700" cy="120" r="6"/>
+    <circle cx="740" cy="200" r="4"/>
+    <circle cx="60" cy="650" r="5"/>
+    <circle cx="720" cy="680" r="5"/>
+    <circle cx="120" cy="740" r="4"/>
+  </g>
+
+  <!-- main plate -->
+  <circle cx="400" cy="420" r="290" fill="#00000022"/>
+  <circle cx="400" cy="410" r="290" fill="url(#plateGrad)"/>
+  <circle cx="400" cy="410" r="290" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="10"/>
+  <circle cx="400" cy="410" r="250" fill="none" stroke="#e8542e" stroke-opacity="0.12" stroke-width="3"/>
+
+  <!-- rice mound -->
+  <ellipse cx="330" cy="380" rx="120" ry="95" fill="url(#riceGrad)"/>
+  <g fill="#fffdf6" opacity="0.9">
+    <ellipse cx="290" cy="350" rx="5" ry="3" transform="rotate(20 290 350)"/>
+    <ellipse cx="320" cy="335" rx="5" ry="3" transform="rotate(-15 320 335)"/>
+    <ellipse cx="360" cy="345" rx="5" ry="3" transform="rotate(10 360 345)"/>
+    <ellipse cx="300" cy="400" rx="5" ry="3" transform="rotate(-10 300 400)"/>
+    <ellipse cx="350" cy="410" rx="5" ry="3" transform="rotate(15 350 410)"/>
+  </g>
+
+  <!-- curry bowl -->
+  <circle cx="500" cy="330" r="95" fill="#fffaf3"/>
+  <circle cx="500" cy="330" r="95" fill="none" stroke="#ead9c6" stroke-width="4"/>
+  <circle cx="500" cy="330" r="78" fill="url(#curryGrad)"/>
+  <g fill="#2f7d4f">
+    <ellipse cx="470" cy="305" rx="14" ry="6" transform="rotate(-20 470 305)"/>
+    <ellipse cx="530" cy="315" rx="12" ry="5" transform="rotate(15 530 315)"/>
+  </g>
+
+  <!-- dal bowl -->
+  <circle cx="530" cy="480" r="70" fill="#fffaf3"/>
+  <circle cx="530" cy="480" r="70" fill="none" stroke="#ead9c6" stroke-width="4"/>
+  <circle cx="530" cy="480" r="55" fill="url(#dalGrad)"/>
+
+  <!-- chutney bowl -->
+  <circle cx="290" cy="500" r="58" fill="#fffaf3"/>
+  <circle cx="290" cy="500" r="58" fill="none" stroke="#ead9c6" stroke-width="4"/>
+  <circle cx="290" cy="500" r="44" fill="url(#chutneyGrad)"/>
+
+  <!-- naan bread, partially off-plate -->
+  <ellipse cx="620" cy="560" rx="110" ry="70" fill="#f2a93c" transform="rotate(18 620 560)"/>
+  <ellipse cx="620" cy="560" rx="110" ry="70" fill="none" stroke="#d68d1f" stroke-width="4" transform="rotate(18 620 560)"/>
+  <g fill="#c9781a" opacity="0.5">
+    <ellipse cx="590" cy="540" rx="18" ry="7" transform="rotate(25 590 540)"/>
+    <ellipse cx="640" cy="575" rx="20" ry="7" transform="rotate(15 640 575)"/>
+  </g>
+
+  <!-- garnish sprigs -->
+  <g fill="#2f7d4f">
+    <ellipse cx="420" cy="310" rx="10" ry="20" transform="rotate(30 420 310)"/>
+    <ellipse cx="440" cy="300" rx="8" ry="16" transform="rotate(-10 440 300)"/>
+  </g>
+  <g fill="#c73e1d">
+    <ellipse cx="250" cy="430" rx="9" ry="20" transform="rotate(-25 250 430)"/>
+  </g>
+
+  <!-- scattered spice dots around plate -->
+  <g fill="#fff1e2" opacity="0.85">
+    <circle cx="150" cy="240" r="5"/>
+    <circle cx="180" cy="270" r="3"/>
+    <circle cx="640" cy="230" r="5"/>
+    <circle cx="670" cy="260" r="3"/>
+  </g>
+</svg>

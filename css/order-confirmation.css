@@ -1,0 +1,84 @@
+/* Stackly — Order confirmation styles */
+
+.confirmation-header { text-align: center; max-width: 480px; margin: 0 auto 2.5rem; }
+.confirmation-check {
+  width: 68px; height: 68px;
+  border-radius: 50%;
+  background: var(--color-success);
+  color: #fff;
+  font-size: 2rem;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1rem;
+}
+.confirmation-header p { color: var(--color-text-light); }
+.order-id { margin-top: 0.5rem; font-family: var(--font-heading); }
+.order-id strong { color: var(--color-primary-dark); }
+
+.confirmation-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+}
+.confirmation-card { padding: 1.75rem; }
+.confirmation-card h2 { margin-bottom: 1rem; }
+
+.countdown {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.status-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 1.5rem;
+  counter-reset: step;
+}
+.status-timeline li {
+  position: relative;
+  padding: 0 0 1.5rem 2.25rem;
+  color: var(--color-text-light);
+  font-weight: 500;
+  font-size: 0.92rem;
+}
+.status-timeline li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 2px;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--color-border);
+  border: 3px solid var(--color-surface);
+  box-shadow: 0 0 0 2px var(--color-border);
+}
+.status-timeline li::after {
+  content: '';
+  position: absolute;
+  left: 9px; top: 20px;
+  width: 2px;
+  height: calc(100% - 18px);
+  background: var(--color-border);
+}
+.status-timeline li:last-child::after { display: none; }
+.status-timeline li.is-complete { color: var(--color-text); }
+.status-timeline li.is-complete::before { background: var(--color-success); box-shadow: 0 0 0 2px var(--color-success); }
+.status-timeline li.is-current { color: var(--color-primary-dark); font-weight: 700; }
+.status-timeline li.is-current::before { background: var(--color-primary); box-shadow: 0 0 0 2px var(--color-primary); }
+
+.addr-name { font-weight: 700; font-family: var(--font-heading); }
+
+.confirmation-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+  .confirmation-grid { grid-template-columns: 1fr; }
+}

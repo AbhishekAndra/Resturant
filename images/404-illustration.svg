@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" role="img" aria-labelledby="notFoundTitle">
+  <title id="notFoundTitle">An empty plate with a magnifying glass, illustrating a dish that could not be found</title>
+  <circle cx="200" cy="150" r="90" fill="#fff1e2"/>
+  <circle cx="200" cy="150" r="90" fill="none" stroke="#ead9c6" stroke-width="3"/>
+  <circle cx="200" cy="150" r="60" fill="none" stroke="#ead9c6" stroke-width="3" stroke-dasharray="6 8"/>
+  <g stroke="#e8542e" stroke-width="6" stroke-linecap="round">
+    <line x1="150" y1="115" x2="150" y2="150"/>
+    <line x1="146" y1="115" x2="154" y2="115"/>
+    <path d="M150 150c0 10 8 10 8 20" fill="none"/>
+  </g>
+  <g stroke="#e8542e" stroke-width="6" stroke-linecap="round">
+    <line x1="180" y1="112" x2="180" y2="170"/>
+  </g>
+  <g stroke="#e8542e" stroke-width="6" stroke-linecap="round">
+    <path d="M210 112c-6 4-6 12 0 16s6 12 0 16" fill="none"/>
+    <line x1="210" y1="144" x2="210" y2="170"/>
+  </g>
+  <g transform="translate(255 175) rotate(35)">
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#2b1d14" stroke-width="7"/>
+    <line x1="18" y1="18" x2="42" y2="42" stroke="#2b1d14" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <text x="200" y="150" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700" font-size="15" fill="#c73e1d" opacity="0" >404</text>
+</svg>
