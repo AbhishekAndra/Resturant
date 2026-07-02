@@ -25,14 +25,14 @@
       else tab.removeAttribute('aria-current');
     });
 
+    /* The map iframe's src is set statically in the HTML (not here) so it
+       loads immediately regardless of script execution — matches contact.html. */
     var addressEl = document.getElementById('location-address');
     var phoneEl = document.getElementById('location-phone');
     var hoursEl = document.getElementById('location-hours');
-    var mapFrame = document.getElementById('location-map-frame');
     if (addressEl) addressEl.textContent = RESTAURANT_INFO.address;
     if (phoneEl) { phoneEl.textContent = RESTAURANT_INFO.phone; phoneEl.href = 'tel:' + RESTAURANT_INFO.phoneHref; }
     if (hoursEl) hoursEl.textContent = RESTAURANT_INFO.hours;
-    if (mapFrame) mapFrame.src = RESTAURANT_INFO.mapEmbedSrc;
 
     var continueBtn = document.getElementById('location-continue');
     if (continueBtn) {
