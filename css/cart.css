@@ -47,8 +47,8 @@
   font-size: 1rem;
   display: flex; align-items: center; justify-content: center;
 }
-.cart-item-remove:hover { background: #fceceb; }
-.cart-item-total { font-family: var(--font-heading); font-weight: 700; min-width: 70px; text-align: right; }
+.cart-item-remove:hover { background: rgba(217, 105, 95, 0.18); }
+.cart-item-total { font-family: var(--font-body); font-weight: 700; min-width: 70px; text-align: right; }
 
 .cart-summary { padding: 1.75rem; position: sticky; top: calc(var(--nav-height) + 1rem); }
 .cart-summary h2 { margin-bottom: 1.25rem; }
@@ -63,7 +63,7 @@
   border-top: 1px dashed var(--color-border);
   border-bottom: 1px dashed var(--color-border);
   margin-bottom: 1.25rem;
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-size: 1.2rem;
   font-weight: 700;
 }

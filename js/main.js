@@ -201,4 +201,32 @@
       toast.classList.remove('show');
     }, 2600);
   };
+
+  /* ---------- Nav scroll transition: transparent-over-hero -> solid dark ---------- */
+  var transparentNav = document.querySelector('.navbar--transparent');
+  if (transparentNav) {
+    var applyScrolledState = function () {
+      transparentNav.classList.toggle('navbar--scrolled', window.scrollY > 60);
+    };
+    applyScrolledState();
+    window.addEventListener('scroll', applyScrolledState, { passive: true });
+  }
+
+  /* ---------- Scroll-triggered fade-in sections ---------- */
+  var fadeSections = document.querySelectorAll('.fade-in-section');
+  if (fadeSections.length) {
+    if ('IntersectionObserver' in window) {
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+      fadeSections.forEach(function (section) { revealObserver.observe(section); });
+    } else {
+      fadeSections.forEach(function (section) { section.classList.add('is-visible'); });
+    }
+  }
 })();

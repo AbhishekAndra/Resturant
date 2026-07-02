@@ -57,7 +57,7 @@
   box-shadow: var(--shadow-sm);
 }
 .stat-card .stat-label { color: var(--color-text-light); font-size: 0.85rem; margin-bottom: 0.4rem; }
-.stat-card .stat-value { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--color-primary-dark); }
+.stat-card .stat-value { font-family: var(--font-body); font-size: 1.6rem; font-weight: 700; color: var(--color-primary-dark); }
 
 .orders-table-wrap { overflow-x: auto; }
 .orders-table { width: 100%; border-collapse: collapse; min-width: 640px; }

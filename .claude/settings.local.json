@@ -7,7 +7,14 @@
       "Bash(node --check js/data.js)",
       "Bash(node -e ' *)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(xargs -I{} sh -c 'echo \"=== {} ===\"; grep -c \"fonts.googleapis.com/css2\" {}')",
+      "Bash(node fix-fonts.js)",
+      "Bash(npx --yes http-server -p 4182 -c-1 .)",
+      "Bash(curl -s -o /dev/null -w \"server up: %{http_code}\\\\n\" http://localhost:4182/index.html)",
+      "Bash(sed -i \"s|const BASE = 'http://localhost:[0-9]*'|const BASE = 'http://localhost:4182'|\" smoke-test.js smoke-test2.js)",
+      "Bash(node smoke-test.js)",
+      "Bash(node smoke-test2.js)"
     ]
   }
 }
