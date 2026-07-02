@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stackly | Authentic Indian Food, Delivered Fresh</title>
-<meta name="description" content="Order authentic Indian dishes online from Stackly — fresh ingredients, fast delivery, and rich, home-style flavor.">
+<title>Find Location | Stackly</title>
+<meta name="description" content="Find your nearest Stackly location for pickup or delivery.">
 <link rel="icon" type="image/webp" href="images/logo-icon.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/order-flow.css">
 </head>
-<body data-page="home" class="is-loading">
+<body data-page="find-location" class="is-loading">
 
 <div id="loader" role="status" aria-live="polite">
   <img src="images/logo-icon.webp" alt="" class="loader-logo" width="96" height="96">
@@ -21,13 +21,11 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- ===== Navbar ===== -->
-<header class="navbar navbar--transparent">
+<header class="navbar">
   <div class="navbar-inner">
     <a href="index.html" class="nav-logo">
       <img src="images/logo.webp" alt="Stackly" width="136" height="40">
     </a>
-
     <nav class="nav-links" aria-label="Primary">
       <a href="index.html" data-page="home">Home</a>
       <div class="nav-dropdown" data-open="false">
@@ -45,7 +43,6 @@
       <a href="about.html" data-page="about">About</a>
       <a href="contact.html" data-page="contact">Contact</a>
     </nav>
-
     <div class="nav-actions">
       <a href="cart.html" class="nav-cart-link" aria-label="View cart">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
@@ -63,7 +60,6 @@
   </div>
 </header>
 
-<!-- ===== Mobile overlay menu ===== -->
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-menu-head">
     <a href="index.html" class="nav-logo" style="color:#fff">
@@ -97,171 +93,53 @@
 </div>
 
 <main id="main">
-
-  <!-- ===== Hero ===== -->
-  <section class="hero" style="background-image:url('images/hero-bg.webp')">
-    <div class="hero-wordmark" aria-hidden="true">
-      <span>S</span><span>T</span><span>A</span><span>C</span><span>K</span><span>L</span><span>Y</span>
-    </div>
-    <div class="container hero-inner">
-      <p class="eyebrow">Fine Indian Dining, Delivered</p>
-      <h1>Authentic Flavor,<br>Effortlessly Delivered</h1>
-      <p class="hero-desc">Hand-picked spices, slow-cooked recipes and generous portions — Stackly brings restaurant-quality Indian food straight to your door.</p>
-      <div class="hero-actions">
-        <a href="menu.html" class="btn btn-primary">View Menu</a>
-        <a href="about.html" class="btn btn-outline">Our Story</a>
-      </div>
-    </div>
-    <div class="hero-scroll-cue" aria-hidden="true"><span></span></div>
-  </section>
-
-  <!-- ===== Start Your Order ===== -->
-  <section class="section start-order-section fade-in-section" id="start-order">
-    <div class="start-order-grid">
-      <div class="start-order-copy">
-        <p class="eyebrow">Let's Get Started</p>
-        <h2>Welcome to Stackly</h2>
-        <p class="lede">Craving something good? Start a fresh order or pick up right where you left off.</p>
-        <div class="start-order-actions">
-          <a href="serving-options.html" class="start-order-btn">
-            <span>Start New Order</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 2v7a2 2 0 0 0 4 0V2M9 9v13M18 2c-1.7 0-3 1.8-3 5s1.3 5 3 5v8"/></svg>
-          </a>
-          <a href="customer-dashboard.html" class="start-order-btn start-order-btn-outline">
-            <span>Track Your Order</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.6-6.3M21 3v5h-5"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="start-order-media">
-        <img src="images/dishes/m05.webp" alt="Freshly plated signature dish" loading="lazy">
-        <div class="start-order-pill-stack">
-          <a href="contact.html" class="start-order-pill">Contact Us</a>
-          <a href="menu.html" class="start-order-pill">View Menu</a>
-        </div>
-        <a href="contact.html#location" class="start-order-pill start-order-pill-bottom">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21c4-4.5 7-8.3 7-11.5A7 7 0 0 0 5 9.5C5 12.7 8 16.5 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-          Find Us
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== About / Story ===== -->
-  <section class="section about-story-section fade-in-section" id="about-preview">
-    <div class="container about-story-grid-home">
-      <div class="fade-in-section">
-        <p class="eyebrow">Our Story</p>
-        <h2>Cooked with tradition, served with care</h2>
-        <p class="lede">Stackly started as a small family kitchen with one goal: bring the honest, generous flavor of home-style Indian cooking to every doorstep. Every dish is made fresh to order using traditional techniques — no shortcuts, no compromises.</p>
-        <p class="lede">Our mission is simple — exceptional food, fair prices, and a delivery experience as considered as the meal itself.</p>
-        <a href="about.html" class="btn btn-outline" style="margin-top:1rem">Learn More About Us</a>
-      </div>
-      <div class="about-story-media-home fade-in-section">
-        <img src="images/about-dish.webp" alt="A traditional Indian thali spread with curry, dal, chutney and warm naan" width="800" height="800" loading="lazy">
-      </div>
-    </div>
-    <div class="container feature-list fade-in-section">
-      <div class="feature-card">
-        <div class="feature-icon" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6M8 4v4M16 4v4"/><path d="M4 22c0-6 3-10 8-10s8 4 8 10"/></svg>
-        </div>
-        <h3>Fresh Ingredients</h3>
-        <p>Sourced daily from local markets and ground in-house for maximum flavor.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-        </div>
-        <h3>Considered Delivery</h3>
-        <p>Hot meals at your door in 25–35 minutes, tracked from kitchen to doorstep.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.7 8.5 2.5 5 6 5c2 0 3.5 1 4 2.5.5-1.5 2-2.5 4-2.5 3.5 0 5.3 3.5 3.5 7.5C19 16.65 12 21 12 21z"/></svg>
-        </div>
-        <h3>Authentic Recipes</h3>
-        <p>Family recipes passed down for generations, perfected in every batch.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Gallery ===== -->
-  <section class="section section-dark gallery-section fade-in-section" id="gallery">
+  <section class="page-hero flow-hero" style="background-image:url('images/hero-bg.webp')">
     <div class="container">
-      <div class="section-head" style="margin-inline:auto; text-align:center">
-        <p class="eyebrow">A Taste of the Table</p>
-        <h2>From Our Kitchen</h2>
-      </div>
-      <div class="gallery-strip">
-        <figure class="gallery-item"><img src="images/dishes/m08.webp" alt="Hyderabadi Biryani" loading="lazy"></figure>
-        <figure class="gallery-item"><img src="images/dishes/m26.webp" alt="Margherita Pizza" loading="lazy"></figure>
-        <figure class="gallery-item"><img src="images/dishes/m33.webp" alt="Sushi Platter" loading="lazy"></figure>
-        <figure class="gallery-item"><img src="images/dishes/m35.webp" alt="Belgian Waffles" loading="lazy"></figure>
-        <figure class="gallery-item"><img src="images/dishes/m52.webp" alt="Pan-Seared Salmon" loading="lazy"></figure>
-      </div>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span class="sep">/</span><a href="serving-options.html">Choose Serving Option</a><span class="sep">/</span><span aria-current="page">Find Location</span>
+      </nav>
+      <h1>Find Location</h1>
     </div>
   </section>
 
-  <!-- ===== Menu category cards ===== -->
-  <section class="section menu-cards-section fade-in-section">
+  <section class="section fade-in-section">
     <div class="container">
-      <div class="section-head" style="margin-inline:auto; text-align:center">
-        <p class="eyebrow">Explore</p>
-        <h2>The Menu</h2>
-      </div>
-      <div class="menu-cards-grid">
-        <a href="menu.html#mains" class="menu-card" style="background-image:url('images/dishes/m05.webp')">
-          <span class="menu-card-label">Dinner Menu</span>
-        </a>
-        <a href="menu.html#drinks" class="menu-card" style="background-image:url('images/dishes/m18.webp')">
-          <span class="menu-card-label">Drink Menu</span>
-        </a>
-        <a href="menu.html#desserts" class="menu-card" style="background-image:url('images/dishes/m14.webp')">
-          <span class="menu-card-label">Dessert Menu</span>
-        </a>
+      <nav class="location-tabs" aria-label="Pickup or delivery">
+        <a href="find-location.html?type=pickup" class="location-tab" data-serving-option="pickup">Pickup</a>
+        <a href="find-location.html?type=delivery" class="location-tab" data-serving-option="delivery">Delivery</a>
+      </nav>
+
+      <div class="location-layout">
+        <div class="location-card" id="location-card">
+          <div class="location-card-media">
+            <img src="images/about-dish.webp" alt="Stackly restaurant" loading="lazy">
+          </div>
+          <div class="location-card-body">
+            <h3>Stackly</h3>
+            <address id="location-address">Connaught Place, New Delhi, Delhi 110001, India</address>
+            <p><a href="#" id="location-phone">+91 98765 43210</a></p>
+            <p id="location-hours">Mon – Sun · 11:00 AM – 11:00 PM</p>
+            <span class="location-status">Open Now</span>
+            <button type="button" class="location-continue" id="location-continue">
+              <span>Continue to Menu</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="location-map">
+          <iframe
+            id="location-map-frame"
+            title="Map showing Stackly location"
+            src=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- ===== Featured dishes ===== -->
-  <section class="section section-alt fade-in-section" id="featured">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Fan Favorites</p>
-        <h2>Featured Dishes</h2>
-        <p class="lede">A taste of what keeps our customers coming back for more.</p>
-      </div>
-      <div class="dish-grid" id="featured-dish-grid"></div>
-      <div style="text-align:center; margin-top:2.5rem">
-        <a href="menu.html" class="btn btn-primary">View Full Menu</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Testimonials ===== -->
-  <section class="section fade-in-section" id="testimonials">
-    <div class="container">
-      <div class="section-head" style="margin-inline:auto; text-align:center">
-        <p class="eyebrow">Customer Love</p>
-        <h2>What our guests are saying</h2>
-      </div>
-      <div class="testimonial-grid" id="testimonial-grid"></div>
-    </div>
-  </section>
-
-  <!-- ===== CTA ===== -->
-  <section class="cta-band fade-in-section">
-    <div class="container cta-inner">
-      <h2>Hungry already? Let's fix that.</h2>
-      <p>Order in the next 15 minutes and get it delivered fresh, fast, and full of flavor.</p>
-      <a href="menu.html" class="btn btn-accent">Order Now</a>
-    </div>
-  </section>
-
 </main>
 
-<!-- ===== Footer ===== -->
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
@@ -336,6 +214,6 @@
 <script src="js/auth.js"></script>
 <script src="js/cart.js"></script>
 <script src="js/main.js"></script>
-<script src="js/home.js"></script>
+<script src="js/order-flow.js"></script>
 </body>
 </html>
