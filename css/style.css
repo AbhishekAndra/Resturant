@@ -310,7 +310,9 @@ select:focus-visible,
 .nav-links a {
   font-family: var(--font-heading);
   font-weight: 500;
-  font-size: 0.98rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   padding: 0.5rem 0.1rem;
   position: relative;
   color: var(--color-text);
@@ -337,7 +339,9 @@ select:focus-visible,
   color: var(--color-text);
   font-family: var(--font-heading);
   font-weight: 500;
-  font-size: 0.98rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   padding: 0.5rem 0.1rem;
 }
 .nav-dropdown-toggle .chevron {
@@ -466,8 +470,10 @@ select:focus-visible,
   .mobile-menu-links a, .mobile-menu-links .mobile-dropdown-toggle {
     color: var(--color-text-on-dark);
     font-family: var(--font-heading);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     padding: 0.9rem 0.25rem;
     border-bottom: 1px solid rgba(255,255,255,0.08);
     display: block;
@@ -602,9 +608,11 @@ select:focus-visible,
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 .field textarea { min-height: 130px; resize: vertical; }
+.field input::placeholder,
+.field textarea::placeholder { color: var(--color-text-light); opacity: 1; }
 .field input:focus, .field textarea:focus, .field select:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(232, 84, 46, 0.15);
+  box-shadow: 0 0 0 3px rgba(201, 162, 75, 0.2);
   outline: none;
 }
 .field input[aria-invalid="true"], .field textarea[aria-invalid="true"] {
@@ -617,18 +625,18 @@ select:focus-visible,
 }
 .field-hint { color: var(--color-text-light); font-size: 0.82rem; }
 .form-success {
-  background: #eaf6ee;
+  background: rgba(90, 161, 125, 0.12);
   color: var(--color-success);
-  border: 1px solid #b9e3c6;
+  border: 1px solid rgba(90, 161, 125, 0.35);
   border-radius: var(--radius-sm);
   padding: 1rem 1.25rem;
   font-weight: 600;
   margin-bottom: 1.25rem;
 }
 .form-banner-error {
-  background: #fceceb;
+  background: rgba(217, 105, 95, 0.12);
   color: var(--color-error);
-  border: 1px solid #f2b9b3;
+  border: 1px solid rgba(217, 105, 95, 0.35);
   border-radius: var(--radius-sm);
   padding: 1rem 1.25rem;
   font-weight: 600;
@@ -674,7 +682,12 @@ select:focus-visible,
   background-position: center;
   color: var(--color-text-on-dark);
 }
-.page-hero h1 { color: #fff; margin-top: 0.6rem; }
+.page-hero h1 {
+  color: var(--color-text-on-dark);
+  margin-top: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
 .page-hero p { color: var(--color-text-on-dark-muted); max-width: 620px; margin-top: 0.75rem; }
 
 /* Animations */

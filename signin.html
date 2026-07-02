@@ -95,81 +95,94 @@
 <main id="main">
   <section class="auth-section">
     <div class="container">
-      <div class="auth-grid">
-        <div class="auth-visual">
-          <span class="emoji" aria-hidden="true">🥘</span>
-          <h2>Join Stackly</h2>
-          <p>Create a free account to save your addresses, track orders, and get delivery updates in one place.</p>
+      <div class="auth-card">
+        <a href="index.html" class="auth-close" aria-label="Close">&times;</a>
+        <div class="auth-icon" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 3-6 6.5-6s6.5 2.5 6.5 6"/><path d="M18 8v5M15.5 10.5h5"/></svg>
         </div>
-        <div class="auth-form-panel">
-          <div class="role-tabs" role="tablist" aria-label="Sign in or create account">
-            <button class="role-tab is-active" id="tab-signin" data-tab="signin" role="tab" aria-selected="true">Sign In</button>
-            <button class="role-tab" id="tab-signup" data-tab="signup" role="tab" aria-selected="false">Create Account</button>
-          </div>
 
-          <!-- Sign In panel -->
-          <div id="panel-signin" data-panel="signin">
-            <h1>Sign In</h1>
-            <p class="auth-subtitle">Use an existing Stackly account.</p>
-            <div class="demo-hint">
-              <strong>Demo credentials</strong><br>
-              Customer: demo@restaurant.in / demo1234<br>
-              Admin: admin@restaurant.in / admin1234
+        <div class="role-tabs" role="tablist" aria-label="Sign in or create account">
+          <button class="role-tab is-active" id="tab-signin" data-tab="signin" role="tab" aria-selected="true">Sign In</button>
+          <button class="role-tab" id="tab-signup" data-tab="signup" role="tab" aria-selected="false">Create Account</button>
+        </div>
+
+        <!-- Sign In panel -->
+        <div id="panel-signin" data-panel="signin">
+          <h1>Welcome Back</h1>
+          <p class="auth-subtitle">Use an existing Stackly account.</p>
+          <div class="demo-hint">
+            <strong>Demo credentials</strong><br>
+            Customer: demo@restaurant.in / demo1234<br>
+            Admin: admin@restaurant.in / admin1234
+          </div>
+          <div id="signin-status" aria-live="polite"></div>
+          <form id="signin-form" novalidate>
+            <div class="field">
+              <label for="si-email" class="sr-only">Email <span class="required">*</span></label>
+              <div class="input-icon-wrap">
+                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+                <input type="email" id="si-email" name="email" autocomplete="email" required placeholder="Email Address" aria-describedby="err-si-email">
+              </div>
+              <p class="field-error" id="err-si-email"></p>
             </div>
-            <div id="signin-status" aria-live="polite"></div>
-            <form id="signin-form" novalidate>
-              <div class="field">
-                <label for="si-email">Email <span class="required">*</span></label>
-                <input type="email" id="si-email" name="email" autocomplete="email" required aria-describedby="err-si-email">
-                <p class="field-error" id="err-si-email"></p>
+            <div class="field">
+              <label for="si-password" class="sr-only">Password <span class="required">*</span></label>
+              <div class="input-icon-wrap password-field">
+                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+                <input type="password" id="si-password" name="password" autocomplete="current-password" required placeholder="Password" aria-describedby="err-si-password">
+                <button type="button" class="password-toggle" data-toggle-password="si-password">Show</button>
               </div>
-              <div class="field">
-                <label for="si-password">Password <span class="required">*</span></label>
-                <div class="password-field">
-                  <input type="password" id="si-password" name="password" autocomplete="current-password" required aria-describedby="err-si-password">
-                  <button type="button" class="password-toggle" data-toggle-password="si-password">Show</button>
-                </div>
-                <p class="field-error" id="err-si-password"></p>
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-            </form>
-          </div>
-
-          <!-- Create Account panel -->
-          <div id="panel-signup" data-panel="signup" hidden>
-            <h1>Create Account</h1>
-            <p class="auth-subtitle">Sign up for a new demo customer account — stored locally in your browser.</p>
-            <div id="signup-status" aria-live="polite"></div>
-            <form id="signup-form" novalidate>
-              <div class="field">
-                <label for="su-name">Full Name <span class="required">*</span></label>
-                <input type="text" id="su-name" name="name" autocomplete="name" required aria-describedby="err-su-name">
-                <p class="field-error" id="err-su-name"></p>
-              </div>
-              <div class="field">
-                <label for="su-email">Email <span class="required">*</span></label>
-                <input type="email" id="su-email" name="email" autocomplete="email" required aria-describedby="err-su-email">
-                <p class="field-error" id="err-su-email"></p>
-              </div>
-              <div class="field">
-                <label for="su-password">Password <span class="required">*</span></label>
-                <div class="password-field">
-                  <input type="password" id="su-password" name="password" autocomplete="new-password" required aria-describedby="err-su-password">
-                  <button type="button" class="password-toggle" data-toggle-password="su-password">Show</button>
-                </div>
-                <p class="field-error" id="err-su-password"></p>
-              </div>
-              <div class="field">
-                <label for="su-confirm">Confirm Password <span class="required">*</span></label>
-                <input type="password" id="su-confirm" name="confirm" autocomplete="new-password" required aria-describedby="err-su-confirm">
-                <p class="field-error" id="err-su-confirm"></p>
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">Create Account</button>
-            </form>
-          </div>
-
-          <p class="auth-switch">Already know your login? <a href="login.html">Go to Login</a></p>
+              <p class="field-error" id="err-si-password"></p>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block auth-submit">Sign In</button>
+          </form>
         </div>
+
+        <!-- Create Account panel -->
+        <div id="panel-signup" data-panel="signup" hidden>
+          <h1>Get Started</h1>
+          <p class="auth-subtitle">Join our family and use the app to skip the line, feel the love and share the good.</p>
+          <div id="signup-status" aria-live="polite"></div>
+          <form id="signup-form" novalidate>
+            <div class="field">
+              <label for="su-name" class="sr-only">Full Name <span class="required">*</span></label>
+              <div class="input-icon-wrap">
+                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c0-3.5 3.4-6 7.5-6s7.5 2.5 7.5 6"/></svg>
+                <input type="text" id="su-name" name="name" autocomplete="name" required placeholder="Full Name" aria-describedby="err-su-name">
+              </div>
+              <p class="field-error" id="err-su-name"></p>
+            </div>
+            <div class="field">
+              <label for="su-email" class="sr-only">Email <span class="required">*</span></label>
+              <div class="input-icon-wrap">
+                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+                <input type="email" id="su-email" name="email" autocomplete="email" required placeholder="Email Address" aria-describedby="err-su-email">
+              </div>
+              <p class="field-error" id="err-su-email"></p>
+            </div>
+            <div class="field">
+              <label for="su-password" class="sr-only">Password <span class="required">*</span></label>
+              <div class="input-icon-wrap password-field">
+                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+                <input type="password" id="su-password" name="password" autocomplete="new-password" required placeholder="Password" aria-describedby="err-su-password">
+                <button type="button" class="password-toggle" data-toggle-password="su-password">Show</button>
+              </div>
+              <p class="field-error" id="err-su-password"></p>
+            </div>
+            <div class="field">
+              <label for="su-confirm" class="sr-only">Confirm Password <span class="required">*</span></label>
+              <div class="input-icon-wrap password-field">
+                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+                <input type="password" id="su-confirm" name="confirm" autocomplete="new-password" required placeholder="Confirm Password" aria-describedby="err-su-confirm">
+              </div>
+              <p class="field-error" id="err-su-confirm"></p>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block auth-submit">Sign Up</button>
+            <p class="auth-terms">By signing up, you agree to our <a href="#" data-modal-open="terms-modal">Terms of Service</a> and <a href="#" data-modal-open="privacy-modal">Privacy Policy</a>.</p>
+          </form>
+        </div>
+
+        <a href="index.html" class="auth-skip">Skip</a>
       </div>
     </div>
   </section>

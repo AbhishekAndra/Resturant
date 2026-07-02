@@ -78,11 +78,11 @@
   font-size: 0.78rem;
   font-weight: 700;
 }
-.status-pill.pending { background: #fdecd0; color: #a15c00; }
-.status-pill.preparing { background: #fde3cf; color: #b64d0f; }
-.status-pill.out-for-delivery { background: #dceeff; color: #10609e; }
-.status-pill.delivered { background: #dcf3e3; color: #217a45; }
-.status-pill.cancelled { background: #fbdede; color: #b3261e; }
+.status-pill.pending { background: rgba(233, 180, 80, 0.15); color: #e9b450; }
+.status-pill.preparing { background: rgba(230, 140, 80, 0.15); color: #e68c50; }
+.status-pill.out-for-delivery { background: rgba(90, 160, 220, 0.15); color: #6fb2e8; }
+.status-pill.delivered { background: rgba(90, 161, 125, 0.15); color: var(--color-success); }
+.status-pill.cancelled { background: rgba(217, 105, 95, 0.15); color: var(--color-error); }
 
 .order-track-row { display: none; }
 .order-track-row.is-open { display: table-row; }

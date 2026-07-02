@@ -29,7 +29,7 @@
   border: 1.5px solid var(--color-border);
   border-radius: var(--radius-sm);
 }
-.error-search input:focus { border-color: var(--color-primary); outline: none; box-shadow: 0 0 0 3px rgba(232,84,46,0.15); }
+.error-search input:focus { border-color: var(--color-primary); outline: none; box-shadow: 0 0 0 3px rgba(201,162,75,0.2); }
 
 .error-actions-primary { margin-bottom: 1.5rem; }
 .error-actions-primary .btn { min-height: 56px; padding-inline: 2.5rem; font-size: 1.05rem; }
