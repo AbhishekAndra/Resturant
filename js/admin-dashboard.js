@@ -118,6 +118,83 @@
 
   render();
 
+  /* ---------- Top selling items ---------- */
+  function renderTopItems() {
+    var orders = loadOrders();
+    var counts = {};
+    orders.forEach(function (order) {
+      order.items.forEach(function (item) {
+        if (!counts[item.id]) counts[item.id] = { id: item.id, name: item.name, emoji: item.emoji, qty: 0, revenue: 0 };
+        counts[item.id].qty += item.qty;
+        counts[item.id].revenue += item.lineTotal;
+      });
+    });
+
+    var body = document.getElementById('ad-top-items-body');
+    var empty = document.getElementById('ad-top-items-empty');
+    var ranked = Object.keys(counts).map(function (id) { return counts[id]; })
+      .sort(function (a, b) { return b.qty - a.qty; })
+      .slice(0, 10);
+
+    if (ranked.length === 0) {
+      body.innerHTML = '';
+      empty.hidden = false;
+      return;
+    }
+    empty.hidden = true;
+    body.innerHTML = ranked.map(function (item, i) {
+      var menuItem = MENU_ITEMS.find(function (m) { return m.id === item.id; });
+      return (
+        '<tr>' +
+          '<td>#' + (i + 1) + '</td>' +
+          '<td>' + item.emoji + ' ' + item.name + '</td>' +
+          '<td style="text-transform:capitalize">' + (menuItem ? menuItem.category : '—') + '</td>' +
+          '<td>' + item.qty + '</td>' +
+          '<td>' + formatINR(item.revenue) + '</td>' +
+        '</tr>'
+      );
+    }).join('');
+  }
+  renderTopItems();
+
+  /* ---------- Sold out alerts ---------- */
+  function renderSoldOut() {
+    var availability = loadAvailability();
+    var soldOut = MENU_ITEMS.filter(function (item) { return availability[item.id] === false; });
+    var list = document.getElementById('ad-sold-out-list');
+    var empty = document.getElementById('ad-sold-out-empty');
+
+    if (soldOut.length === 0) {
+      list.innerHTML = '';
+      empty.hidden = false;
+      return;
+    }
+    empty.hidden = true;
+    list.innerHTML = soldOut.map(function (item) {
+      return (
+        '<div class="address-card">' +
+          '<div>' +
+            '<strong>' + item.emoji + ' ' + item.name + '</strong>' +
+            '<p class="field-hint" style="margin-top:0.3rem; text-transform:capitalize">' + item.category + ' · ' + formatINR(item.price) + '</p>' +
+          '</div>' +
+          '<button type="button" class="btn btn-outline btn-sm" data-restock="' + item.id + '">Mark Available</button>' +
+        '</div>'
+      );
+    }).join('');
+
+    list.querySelectorAll('[data-restock]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var availability = loadAvailability();
+        availability[btn.getAttribute('data-restock')] = true;
+        saveAvailability(availability);
+        renderSoldOut();
+        renderMenu();
+        showToast('Menu availability updated');
+      });
+    });
+  }
+  renderSoldOut();
+
   /* ---------- Menu management ---------- */
   function renderMenu() {
     var availability = loadAvailability();
@@ -142,6 +219,7 @@
         availability[id] = availability[id] === false ? true : false;
         saveAvailability(availability);
         renderMenu();
+        renderSoldOut();
         showToast('Menu availability updated');
       });
     });

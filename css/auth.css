@@ -1,6 +1,8 @@
 /* Stackly — Login / Signin page styles (centered modal-card layout) */
 
 .auth-section {
+  position: relative;
+  overflow: hidden;
   min-height: calc(100vh - var(--nav-height));
   display: flex;
   align-items: center;
@@ -8,9 +10,69 @@
   padding-block: 3rem;
   background: linear-gradient(160deg, var(--color-bg-alt), var(--color-bg));
 }
+.auth-section::before,
+.auth-section::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+.auth-section::before {
+  top: -14%;
+  left: -10%;
+  background: rgba(217, 137, 45, 0.22);
+  animation: auth-glow-a 16s ease-in-out infinite;
+}
+.auth-section::after {
+  bottom: -18%;
+  right: -8%;
+  background: rgba(90, 161, 125, 0.2);
+  animation: auth-glow-b 19s ease-in-out infinite;
+}
+@keyframes auth-glow-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, 45px) scale(1.15); }
+}
+@keyframes auth-glow-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-55px, -35px) scale(1.1); }
+}
+
+.auth-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.auth-bg-emoji {
+  position: absolute;
+  bottom: -10%;
+  font-size: 2.4rem;
+  opacity: 0.35;
+  filter: blur(0.3px);
+  animation: auth-bg-float 22s linear infinite;
+}
+.auth-bg-emoji:nth-child(1) { left: 6%;  font-size: 2.2rem; animation-duration: 20s; animation-delay: 0s; }
+.auth-bg-emoji:nth-child(2) { left: 18%; font-size: 1.8rem; animation-duration: 26s; animation-delay: 3s; }
+.auth-bg-emoji:nth-child(3) { left: 32%; font-size: 2.8rem; animation-duration: 24s; animation-delay: 6s; }
+.auth-bg-emoji:nth-child(4) { left: 50%; font-size: 2rem;   animation-duration: 21s; animation-delay: 2s; }
+.auth-bg-emoji:nth-child(5) { left: 66%; font-size: 2.5rem; animation-duration: 27s; animation-delay: 8s; }
+.auth-bg-emoji:nth-child(6) { left: 78%; font-size: 2.1rem; animation-duration: 23s; animation-delay: 4s; }
+.auth-bg-emoji:nth-child(7) { left: 88%; font-size: 2.6rem; animation-duration: 25s; animation-delay: 10s; }
+.auth-bg-emoji:nth-child(8) { left: 42%; font-size: 1.9rem; animation-duration: 19s; animation-delay: 12s; }
+@keyframes auth-bg-float {
+  0%   { transform: translateY(0) rotate(0deg);      opacity: 0; }
+  10%  { opacity: 0.35; }
+  90%  { opacity: 0.35; }
+  100% { transform: translateY(-130vh) rotate(25deg); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .auth-section::before, .auth-section::after { animation: none; }
+  .auth-bg-emoji { animation: none; opacity: 0.2; bottom: 10%; }
+}
 
 .auth-card {
   position: relative;
+  z-index: 2;
   width: 100%;
   max-width: 440px;
   margin-inline: auto;

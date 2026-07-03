@@ -1,5 +1,181 @@
 /* Stackly — Menu page styles */
 
+/* ---------- Bold intro + offset photo collage ---------- */
+.menu-intro-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+.menu-intro-copy .eyebrow { color: var(--color-primary); }
+.menu-intro-copy h2 {
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  text-transform: uppercase;
+  margin-block: 0.6rem 1.25rem;
+}
+.menu-intro-copy .lede {
+  color: var(--color-text-light);
+  max-width: 440px;
+  margin-bottom: 2.25rem;
+}
+.menu-intro-sub {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.75rem;
+}
+.menu-intro-sub h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.menu-intro-sub p {
+  color: var(--color-text-light);
+  max-width: 380px;
+  margin-bottom: 1.1rem;
+  font-size: 0.95rem;
+}
+.menu-intro-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+  color: var(--color-text);
+}
+.menu-intro-tags li { list-style: none; }
+.menu-intro-tags li::before { content: '— '; color: var(--color-primary); }
+
+.menu-intro-collage {
+  position: relative;
+  min-height: 420px;
+}
+.collage-block {
+  position: absolute;
+  top: 8%;
+  right: 0;
+  width: 64%;
+  height: 82%;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--color-primary), var(--color-primary-dark));
+}
+.collage-photo {
+  position: absolute;
+  margin: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 6px solid var(--color-bg-dark);
+  box-shadow: var(--shadow-lg);
+}
+.collage-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.collage-photo-main {
+  left: 0;
+  top: 0;
+  width: 54%;
+  aspect-ratio: 4 / 5;
+  z-index: 2;
+}
+.collage-photo-accent {
+  right: 4%;
+  bottom: 0;
+  width: 40%;
+  aspect-ratio: 1 / 1;
+  z-index: 3;
+}
+@media (max-width: 900px) {
+  .menu-intro-grid { grid-template-columns: 1fr; }
+  .menu-intro-collage { min-height: 340px; margin-top: 1rem; }
+}
+@media (max-width: 560px) {
+  .menu-intro-collage { min-height: 280px; }
+  .collage-photo-main { width: 60%; }
+  .collage-photo-accent { width: 46%; }
+}
+
+/* ---------- Popular dishes swiper ---------- */
+.food-swiper-section .section-head { margin-bottom: 2rem; }
+.food-swiper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.swiper-track {
+  display: flex;
+  gap: 1.25rem;
+  flex: 1;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0.25rem 0.25rem 1rem;
+  scrollbar-width: none;
+}
+.swiper-track::-webkit-scrollbar { display: none; }
+.swiper-slide {
+  flex: 0 0 auto;
+  width: clamp(150px, 20vw, 230px);
+  margin: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  scroll-snap-align: start;
+}
+.swiper-slide img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.swiper-slide:hover img { transform: scale(1.07); }
+.swiper-slide figcaption {
+  padding: 0.65rem 0.8rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  color: var(--color-text);
+}
+.swiper-arrow {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.swiper-arrow:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #171310;
+}
+.swiper-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+.swiper-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-border);
+  cursor: pointer;
+}
+.swiper-dots button.is-active { background: var(--color-primary); }
+@media (max-width: 640px) {
+  .swiper-arrow { display: none; }
+}
+
 .menu-toolbar {
   display: flex;
   align-items: center;

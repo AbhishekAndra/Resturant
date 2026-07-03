@@ -94,6 +94,10 @@
 
 <main id="main">
   <section class="page-hero" style="background-image:url('images/hero-bg.webp')">
+    <video class="page-hero-video" autoplay muted loop playsinline poster="images/video/about-bg-poster.jpg" aria-hidden="true">
+      <source src="images/video/about-bg.webm" type="video/webm">
+      <source src="images/video/about-bg.mp4" type="video/mp4">
+    </video>
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="index.html">Home</a><span class="sep">/</span><span aria-current="page">About</span>
@@ -106,7 +110,22 @@
   <section class="section">
     <div class="container about-story-grid">
       <div class="about-story-media">
-        <img src="images/about-dish.webp" alt="A traditional Indian thali spread with curry, dal, chutney and warm naan" width="800" height="800" loading="lazy">
+        <div class="story-swiper" id="story-swiper" tabindex="0" aria-label="Photo gallery of our dishes">
+          <div class="story-swiper-track">
+            <img src="images/about-dish.webp" alt="A traditional Indian thali spread with curry, dal, chutney and warm naan" loading="lazy">
+            <img src="images/dishes/m08.webp" alt="Hyderabadi Biryani" loading="lazy">
+            <img src="images/dishes/m26.webp" alt="Margherita Pizza" loading="lazy">
+            <img src="images/dishes/m33.webp" alt="Sushi Platter" loading="lazy">
+            <img src="images/dishes/m35.webp" alt="Belgian Waffles" loading="lazy">
+          </div>
+          <button class="story-swiper-arrow story-swiper-prev" type="button" aria-label="Previous photo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="story-swiper-arrow story-swiper-next" type="button" aria-label="Next photo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <div class="story-swiper-dots"></div>
+        </div>
       </div>
       <div>
         <p class="eyebrow">Since 2014</p>
@@ -124,21 +143,21 @@
         <h2>Mission &amp; Vision</h2>
       </div>
       <div class="mv-grid">
-        <div class="mv-card">
+        <div class="mv-card fade-in-section" style="transition-delay:0s">
           <div class="feature-icon" aria-hidden="true">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.7 8.5 2.5 5 6 5c2 0 3.5 1 4 2.5.5-1.5 2-2.5 4-2.5 3.5 0 5.3 3.5 3.5 7.5C19 16.65 12 21 12 21z"/></svg>
           </div>
           <h3>Our Mission</h3>
           <p>To make restaurant-quality, authentic Indian food accessible and affordable — delivered fresh, fast, and with genuine care in every box.</p>
         </div>
-        <div class="mv-card">
+        <div class="mv-card fade-in-section" style="transition-delay:0.12s">
           <div class="feature-icon" aria-hidden="true">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/></svg>
           </div>
           <h3>Our Vision</h3>
           <p>To become the most trusted name in home-style Indian food delivery, known for consistency, quality, and honest hospitality.</p>
         </div>
-        <div class="mv-card">
+        <div class="mv-card fade-in-section" style="transition-delay:0.24s">
           <div class="feature-icon" aria-hidden="true">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6M8 4v4M16 4v4"/><path d="M4 22c0-6 3-10 8-10s8 4 8 10"/></svg>
           </div>
@@ -160,6 +179,37 @@
     </div>
   </section>
 
+  <section class="section spice-slider-section fade-in-section">
+    <div class="spice-bg" aria-hidden="true">
+      <img src="images/dishes/m17.webp" alt="" loading="lazy">
+      <img src="images/dishes/m21.webp" alt="" loading="lazy">
+      <img src="images/dishes/m27.webp" alt="" loading="lazy">
+      <img src="images/dishes/m33.webp" alt="" loading="lazy">
+    </div>
+    <div class="spice-bg-overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="spice-card">
+        <div class="spice-card-header">
+          <span>Spice Preference</span>
+        </div>
+        <div class="spice-card-body">
+          <p class="eyebrow">Tell Us How You Like It</p>
+          <h2>Find Your Perfect Spice Level</h2>
+          <p class="lede">Every dish can be tailored to your heat tolerance — drag the slider and we'll remember it for your next order.</p>
+          <div class="spice-slider-wrap">
+            <div class="spice-emoji" id="spice-emoji" aria-hidden="true">🌶️</div>
+            <input type="range" id="spice-slider" class="spice-slider" min="1" max="4" step="1" value="2" aria-label="Spice level: Mild to Extra Hot">
+            <div class="spice-ticks" aria-hidden="true">
+              <span>Mild</span><span>Medium</span><span>Hot</span><span>Extra Hot</span>
+            </div>
+          </div>
+          <p class="spice-result" id="spice-result">Medium — a warm, balanced kick that doesn't overpower the spices.</p>
+          <button type="button" class="btn btn-primary" id="spice-save">Save My Preference</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="cta-band">
     <div class="container cta-inner">
       <h2>Come taste the story for yourself</h2>
@@ -170,12 +220,18 @@
 </main>
 
 <footer class="site-footer">
+  <video class="footer-video" autoplay muted loop playsinline poster="images/video/parking-bg-poster.jpg" aria-hidden="true">
+    <source src="images/video/parking-bg.webm" type="video/webm">
+    <source src="images/video/parking-bg.mp4" type="video/mp4">
+  </video>
+  <div class="footer-overlay" aria-hidden="true"></div>
   <div class="container footer-grid">
     <div>
       <a href="index.html" class="footer-brand">
         <img src="images/logo.webp" alt="Stackly" width="122" height="36">
       </a>
       <p>Authentic Indian flavors, cooked fresh and delivered fast. Family recipes, honest ingredients.</p>
+      <p class="footer-parking-note">🅿️ Free on-site parking available for dine-in &amp; pickup guests.</p>
       <div class="footer-social">
         <a href="404.html" aria-label="Stackly on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
         <a href="404.html" aria-label="Stackly on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9h3V6h-3c-2 0-3 1.3-3 3v2H9v3h2v6h3v-6h3l1-3h-4v-1.5c0-.6.4-1.5 1-1.5z"/></svg></a>
@@ -243,5 +299,7 @@
 <script src="js/auth.js"></script>
 <script src="js/cart.js"></script>
 <script src="js/main.js"></script>
+<script src="js/story-swiper.js"></script>
+<script src="js/spice-slider.js"></script>
 </body>
 </html>

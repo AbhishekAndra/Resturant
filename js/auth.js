@@ -70,7 +70,11 @@ var Auth = (function () {
       return { ok: false, reason: 'password' };
     }
 
-    return { ok: false, reason: 'not-found' };
+    // No matching demo/registered account — let any email/password pair in,
+    // so testers aren't blocked just for not knowing the demo credentials.
+    var guestName = normalized.split('@')[0].replace(/[._-]+/g, ' ').trim();
+    guestName = guestName.replace(/\b\w/g, function (c) { return c.toUpperCase(); }) || 'Guest';
+    return { ok: true, email: normalized, name: guestName, role: 'customer' };
   }
 
   function setSession(user) {

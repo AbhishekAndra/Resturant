@@ -100,6 +100,10 @@
 
   <!-- ===== Hero ===== -->
   <section class="hero" style="background-image:url('images/hero-bg.webp')">
+    <video class="hero-video" autoplay muted loop playsinline poster="images/video/hero-bg-poster.jpg" aria-hidden="true">
+      <source src="images/video/hero-bg.webm" type="video/webm">
+      <source src="images/video/hero-bg.mp4" type="video/mp4">
+    </video>
     <div class="hero-wordmark" aria-hidden="true">
       <span>S</span><span>T</span><span>A</span><span>C</span><span>K</span><span>L</span><span>Y</span>
     </div>
@@ -148,23 +152,23 @@
   </section>
 
   <!-- ===== Showcase / Components =====
-       Deliberate light "breather" section against the site's dark theme —
-       swap the four placeholder <img src> below for real dish photos. -->
+       Deliberate light "breather" section against the site's dark theme.
+       Each shape holds a single dish photo that slowly spins clockwise (pure CSS). -->
   <section class="section showcase-section fade-in-section" id="showcase">
     <div class="container showcase-inner">
       <h2 class="showcase-heading">Stylish and Flavorful<br>Components</h2>
       <div class="showcase-grid">
         <figure class="showcase-item showcase-item-1">
-          <img src="images/food-placeholder.webp" alt="Signature biryani served on a round black plate">
+          <img src="images/dishes/m35.webp" alt="Golden Belgian waffles with berries and maple syrup">
         </figure>
         <figure class="showcase-item showcase-item-2">
-          <img src="images/food-placeholder.webp" alt="Crispy paneer tikka starter with mint chutney">
+          <img src="images/dishes/m26.webp" alt="Classic Margherita pizza fresh from the oven">
         </figure>
         <figure class="showcase-item showcase-item-3">
-          <img src="images/food-placeholder.webp" alt="Assorted kebab platter on an oval serving dish">
+          <img src="images/dishes/m02.webp" alt="Assorted kebab platter on an oval serving dish">
         </figure>
         <figure class="showcase-item showcase-item-4">
-          <img src="images/food-placeholder.webp" alt="Traditional thali spread with curry, dal and naan">
+          <img src="images/dishes/m51.webp" alt="Traditional thali spread with curry, dal and naan">
         </figure>
       </div>
     </div>
@@ -237,10 +241,10 @@
         <a href="menu.html#mains" class="menu-card" style="background-image:url('images/dishes/m05.webp')">
           <span class="menu-card-label">Dinner Menu</span>
         </a>
-        <a href="menu.html#drinks" class="menu-card" style="background-image:url('images/dishes/m18.webp')">
+        <a href="menu.html#drinks" class="menu-card" style="background-image:url('images/dishes/m30.webp')">
           <span class="menu-card-label">Drink Menu</span>
         </a>
-        <a href="menu.html#desserts" class="menu-card" style="background-image:url('images/dishes/m14.webp')">
+        <a href="menu.html#desserts" class="menu-card" style="background-image:url('images/dishes/m35.webp')">
           <span class="menu-card-label">Dessert Menu</span>
         </a>
       </div>
@@ -286,12 +290,18 @@
 
 <!-- ===== Footer ===== -->
 <footer class="site-footer">
+  <video class="footer-video" autoplay muted loop playsinline poster="images/video/parking-bg-poster.jpg" aria-hidden="true">
+    <source src="images/video/parking-bg.webm" type="video/webm">
+    <source src="images/video/parking-bg.mp4" type="video/mp4">
+  </video>
+  <div class="footer-overlay" aria-hidden="true"></div>
   <div class="container footer-grid">
     <div>
       <a href="index.html" class="footer-brand">
         <img src="images/logo.webp" alt="Stackly" width="122" height="36">
       </a>
       <p>Authentic Indian flavors, cooked fresh and delivered fast. Family recipes, honest ingredients.</p>
+      <p class="footer-parking-note">🅿️ Free on-site parking available for dine-in &amp; pickup guests.</p>
       <div class="footer-social">
         <a href="404.html" aria-label="Stackly on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
         <a href="404.html" aria-label="Stackly on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9h3V6h-3c-2 0-3 1.3-3 3v2H9v3h2v6h3v-6h3l1-3h-4v-1.5c0-.6.4-1.5 1-1.5z"/></svg></a>

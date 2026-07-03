@@ -14,7 +14,11 @@
       "Bash(curl -s -o /dev/null -w \"server up: %{http_code}\\\\n\" http://localhost:4182/index.html)",
       "Bash(sed -i \"s|const BASE = 'http://localhost:[0-9]*'|const BASE = 'http://localhost:4182'|\" smoke-test.js smoke-test2.js)",
       "Bash(node smoke-test.js)",
-      "Bash(node smoke-test2.js)"
+      "Bash(node smoke-test2.js)",
+      "Bash(git push *)",
+      "Bash(node --check js/customer-dashboard.js)",
+      "Bash(node --check js/admin-dashboard.js)",
+      "Bash(pkill -f \"http-server -p 4199\")"
     ]
   }
 }

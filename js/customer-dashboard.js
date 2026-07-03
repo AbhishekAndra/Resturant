@@ -113,6 +113,160 @@
   renderOrders();
   setInterval(renderOrders, 15000);
 
+  /* ---------- Favorite dishes ---------- */
+  function renderFavorites() {
+    var orders = loadOrders();
+    var counts = {};
+    orders.forEach(function (order) {
+      order.items.forEach(function (item) {
+        if (!counts[item.id]) counts[item.id] = { id: item.id, name: item.name, emoji: item.emoji, qty: 0 };
+        counts[item.id].qty += item.qty;
+      });
+    });
+    var favorites = Object.keys(counts).map(function (id) { return counts[id]; })
+      .sort(function (a, b) { return b.qty - a.qty; })
+      .slice(0, 6);
+
+    var grid = document.getElementById('cd-favorites-grid');
+    var empty = document.getElementById('cd-favorites-empty');
+    if (favorites.length === 0) {
+      grid.innerHTML = '';
+      empty.hidden = false;
+      return;
+    }
+    empty.hidden = true;
+    grid.innerHTML = favorites.map(function (f) {
+      return (
+        '<div class="favorite-card">' +
+          '<div class="favorite-emoji">' + f.emoji + '</div>' +
+          '<div class="favorite-name">' + f.name + '</div>' +
+          '<div class="favorite-count">Ordered ' + f.qty + '×</div>' +
+        '</div>'
+      );
+    }).join('');
+  }
+  renderFavorites();
+
+  /* ---------- Loyalty points ---------- */
+  var LOYALTY_TIERS = [
+    { name: 'Bronze', min: 0 },
+    { name: 'Silver', min: 500 },
+    { name: 'Gold', min: 1500 }
+  ];
+
+  function renderLoyalty() {
+    var orders = loadOrders();
+    var totalSpent = orders.reduce(function (s, o) { return s + o.total; }, 0);
+    var points = Math.floor(totalSpent / 10);
+
+    var tierIndex = 0;
+    for (var i = 0; i < LOYALTY_TIERS.length; i++) {
+      if (points >= LOYALTY_TIERS[i].min) tierIndex = i;
+    }
+    var tier = LOYALTY_TIERS[tierIndex];
+    var nextTier = LOYALTY_TIERS[tierIndex + 1];
+
+    document.getElementById('cd-loyalty-points').textContent = points + ' pts';
+    document.getElementById('cd-loyalty-tier').textContent = tier.name;
+
+    var fill = document.getElementById('cd-loyalty-progress-fill');
+    var nextNote = document.getElementById('cd-loyalty-next');
+    if (nextTier) {
+      var span = nextTier.min - tier.min;
+      var progress = Math.min(100, Math.round(((points - tier.min) / span) * 100));
+      fill.style.width = progress + '%';
+      nextNote.textContent = (nextTier.min - points) + ' more points to reach ' + nextTier.name + '.';
+    } else {
+      fill.style.width = '100%';
+      nextNote.textContent = 'You\'ve reached the highest tier — thank you for being a loyal customer!';
+    }
+  }
+  renderLoyalty();
+
+  /* ---------- Saved addresses ---------- */
+  var ADDRESSES_KEY = 'src_addresses';
+
+  function loadAllAddresses() {
+    try { return JSON.parse(localStorage.getItem(ADDRESSES_KEY) || '[]'); }
+    catch (err) { return []; }
+  }
+  function loadAddresses() {
+    return loadAllAddresses().filter(function (a) { return a.email === session.email; });
+  }
+  function saveAllAddresses(all) {
+    localStorage.setItem(ADDRESSES_KEY, JSON.stringify(all));
+  }
+
+  function renderAddresses() {
+    var addresses = loadAddresses();
+    var list = document.getElementById('cd-addresses-list');
+    var empty = document.getElementById('cd-addresses-empty');
+    if (addresses.length === 0) {
+      list.innerHTML = '';
+      empty.hidden = false;
+    } else {
+      empty.hidden = true;
+      list.innerHTML = addresses.map(function (a) {
+        return (
+          '<div class="address-card">' +
+            '<div>' +
+              '<strong>' + a.label + '</strong>' +
+              '<p class="field-hint" style="margin-top:0.3rem">' + a.address + ', ' + a.city + ' — ' + a.pincode + '</p>' +
+            '</div>' +
+            '<button type="button" class="btn btn-outline btn-sm" data-remove-address="' + a.id + '">Remove</button>' +
+          '</div>'
+        );
+      }).join('');
+
+      list.querySelectorAll('[data-remove-address]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var all = loadAllAddresses().filter(function (a) { return a.id !== btn.getAttribute('data-remove-address'); });
+          saveAllAddresses(all);
+          renderAddresses();
+          showToast('Address removed');
+        });
+      });
+    }
+  }
+  renderAddresses();
+
+  var addrForm = document.getElementById('address-form');
+  addrForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var fields = [
+      { id: 'addr-label', err: 'err-addr-label', message: 'Please enter a label for this address.' },
+      { id: 'addr-line', err: 'err-addr-line', message: 'Please enter the address.' },
+      { id: 'addr-city', err: 'err-addr-city', message: 'Please enter a city.' },
+      { id: 'addr-pincode', err: 'err-addr-pincode', message: 'Please enter a valid 6-digit pincode.', validate: function (v) { return /^\d{6}$/.test(v.trim()); } }
+    ];
+    var valid = true;
+    var values = {};
+    fields.forEach(function (f) {
+      var el = document.getElementById(f.id);
+      var errEl = document.getElementById(f.err);
+      var v = el.value.trim();
+      var ok = f.validate ? f.validate(v) : v.length > 0;
+      errEl.textContent = ok ? '' : f.message;
+      if (!ok) valid = false;
+      values[f.id] = v;
+    });
+    if (!valid) return;
+
+    var all = loadAllAddresses();
+    all.push({
+      id: 'addr' + Date.now(),
+      email: session.email,
+      label: values['addr-label'],
+      address: values['addr-line'],
+      city: values['addr-city'],
+      pincode: values['addr-pincode']
+    });
+    saveAllAddresses(all);
+    renderAddresses();
+    addrForm.reset();
+    showToast('Address saved');
+  });
+
   /* ---------- Change password ---------- */
   var pwForm = document.getElementById('password-form');
   var pwStatus = document.getElementById('pw-status');
