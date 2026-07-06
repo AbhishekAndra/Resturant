@@ -1,0 +1,3 @@
+/* Stackly — Drinks & Desserts page styles */
+
+.drinks-category { scroll-margin-top: calc(var(--nav-height) + 1rem); }

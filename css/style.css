@@ -707,6 +707,56 @@ select:focus-visible,
 .badge-outline { background: transparent; border: 1.5px solid currentColor; }
 .rating { color: var(--color-accent-dark); letter-spacing: 2px; }
 
+/* ---------- CTA band ---------- */
+.cta-band {
+  background: linear-gradient(120deg, var(--color-primary-dark), var(--color-primary));
+  color: #14110b;
+  text-align: center;
+  padding-block: 4rem;
+}
+.cta-inner h2 { color: #14110b; }
+.cta-inner p { color: rgba(20,17,11,0.75); max-width: 480px; margin: 0.75rem auto 1.5rem; }
+.cta-band .btn-accent { background: #14110b; color: var(--color-primary); }
+.cta-band .btn-accent:hover { background: #221d13; }
+
+/* ---------- Testimonials ---------- */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.testimonial-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.testimonial-quote { color: var(--color-text-light); font-size: 0.93rem; flex: 1; }
+.testimonial-person { display: flex; align-items: center; gap: 0.75rem; }
+.avatar {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #14110b;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.testimonial-person div strong { display: block; font-size: 0.92rem; }
+.testimonial-person div span { font-size: 0.8rem; color: var(--color-text-light); }
+@media (max-width: 1024px) {
+  .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .testimonial-grid { grid-template-columns: 1fr; }
+}
+
 .breadcrumb {
   display: flex;
   align-items: center;

@@ -1,4 +1,4 @@
-/* Stackly — Homepage: featured dishes + testimonials render */
+/* Stackly — Homepage: featured dishes render */
 (function () {
   'use strict';
 
@@ -30,22 +30,5 @@
       CartAPI.addToCart(btn.getAttribute('data-add-to-cart'), 1);
       showToast('Added to cart');
     });
-  }
-
-  var testimonialGrid = document.getElementById('testimonial-grid');
-  if (testimonialGrid) {
-    testimonialGrid.innerHTML = TESTIMONIALS.map(function (t) {
-      var stars = '★★★★★'.slice(0, t.rating) + '☆☆☆☆☆'.slice(0, 5 - t.rating);
-      return (
-        '<article class="testimonial-card">' +
-          '<div class="rating" aria-label="' + t.rating + ' out of 5 stars">' + stars + '</div>' +
-          '<p class="testimonial-quote">“' + t.quote + '”</p>' +
-          '<div class="testimonial-person">' +
-            '<div class="avatar" aria-hidden="true">' + t.avatar + '</div>' +
-            '<div><strong>' + t.name + '</strong><span>' + t.role + '</span></div>' +
-          '</div>' +
-        '</article>'
-      );
-    }).join('');
   }
 })();

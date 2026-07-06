@@ -229,4 +229,22 @@
       fadeSections.forEach(function (section) { section.classList.add('is-visible'); });
     }
   }
+
+  /* ---------- Testimonials (shared across any page with #testimonial-grid) ---------- */
+  var testimonialGrid = document.getElementById('testimonial-grid');
+  if (testimonialGrid && typeof TESTIMONIALS !== 'undefined') {
+    testimonialGrid.innerHTML = TESTIMONIALS.map(function (t) {
+      var stars = '★★★★★'.slice(0, t.rating) + '☆☆☆☆☆'.slice(0, 5 - t.rating);
+      return (
+        '<article class="testimonial-card">' +
+          '<div class="rating" aria-label="' + t.rating + ' out of 5 stars">' + stars + '</div>' +
+          '<p class="testimonial-quote">“' + t.quote + '”</p>' +
+          '<div class="testimonial-person">' +
+            '<div class="avatar" aria-hidden="true">' + t.avatar + '</div>' +
+            '<div><strong>' + t.name + '</strong><span>' + t.role + '</span></div>' +
+          '</div>' +
+        '</article>'
+      );
+    }).join('');
+  }
 })();

@@ -104,7 +104,11 @@ const MENU_ITEMS = [
 
   { id: 'm30', name: 'Mocktail Trio', category: 'drinks', price: 249, veg: true, popular: false, rating: 4.6, desc: 'Three signature fruit mocktails, served chilled with fresh garnish.', emoji: '🍹' },
   { id: 'm41', name: 'Pomegranate Berry Smoothie', category: 'drinks', price: 179, veg: true, popular: false, rating: 4.6, desc: 'Fresh pomegranate and berries blended with mint.', emoji: '🍓' },
-  { id: 'm45', name: 'Green Detox Smoothie', category: 'drinks', price: 169, veg: true, popular: false, rating: 4.5, desc: 'Spinach, kiwi, apple and cucumber blended fresh.', emoji: '🥬' }
+  { id: 'm45', name: 'Green Detox Smoothie', category: 'drinks', price: 169, veg: true, popular: false, rating: 4.5, desc: 'Spinach, kiwi, apple and cucumber blended fresh.', emoji: '🥬' },
+
+  { id: 'm53', name: 'Fresh Watermelon Juice', category: 'drinks', price: 89, veg: true, popular: false, rating: 4.5, desc: 'Chilled watermelon juice, naturally sweet and refreshing.', emoji: '🍉' },
+  { id: 'm54', name: 'Green Apple Juice', category: 'drinks', price: 99, veg: true, popular: false, rating: 4.4, desc: 'Freshly pressed green apple juice with a crisp, tart finish.', emoji: '🍏' },
+  { id: 'm55', name: 'Cold Coffee', category: 'drinks', price: 129, veg: true, popular: true, rating: 4.7, desc: 'Chilled blended coffee topped with a scoop of vanilla ice cream.', emoji: '☕' }
 ];
 
 const TESTIMONIALS = [

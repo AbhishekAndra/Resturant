@@ -43,6 +43,7 @@
           <a href="menu.html#breads" role="menuitem">Breads &amp; Rice</a>
           <a href="menu.html#desserts" role="menuitem">Desserts</a>
           <a href="menu.html#drinks" role="menuitem">Beverages</a>
+          <a href="drinks-desserts.html" role="menuitem">Drinks &amp; Desserts</a>
         </div>
       </div>
       <a href="about.html" data-page="about">About</a>
@@ -82,6 +83,7 @@
         <a href="menu.html#breads">Breads &amp; Rice</a>
         <a href="menu.html#desserts">Desserts</a>
         <a href="menu.html#drinks">Beverages</a>
+        <a href="drinks-desserts.html">Drinks &amp; Desserts</a>
       </div>
     </div>
     <a href="about.html" data-page="about">About</a>
@@ -108,12 +110,48 @@
   <section class="section" style="padding-block:0">
     <div class="container dashboard-shell">
       <nav class="dashboard-sidebar" aria-label="Account sections">
-        <button class="dashboard-nav-btn is-active" data-panel-btn="orders">📦 My Orders</button>
-        <button class="dashboard-nav-btn" data-panel-btn="favorites">❤️ Favorite Dishes</button>
-        <button class="dashboard-nav-btn" data-panel-btn="loyalty">🎁 Loyalty Points</button>
-        <button class="dashboard-nav-btn" data-panel-btn="addresses">📍 Saved Addresses</button>
-        <button class="dashboard-nav-btn" data-panel-btn="account">👤 Account Details</button>
-        <button class="dashboard-nav-btn" data-panel-btn="password">🔒 Change Password</button>
+        <button class="dashboard-nav-btn is-active fade-in-section" data-panel-btn="orders" style="transition-delay:0s">
+          <span class="nav-btn-icon" aria-hidden="true">📦</span>
+          <span class="nav-btn-text">
+            <span class="nav-btn-title">My Orders</span>
+            <span class="nav-btn-meta" id="nav-meta-orders">View your order history</span>
+          </span>
+        </button>
+        <button class="dashboard-nav-btn fade-in-section" data-panel-btn="favorites" style="transition-delay:0.06s">
+          <span class="nav-btn-icon" aria-hidden="true">❤️</span>
+          <span class="nav-btn-text">
+            <span class="nav-btn-title">Favorite Dishes</span>
+            <span class="nav-btn-meta" id="nav-meta-favorites">Your most-ordered picks</span>
+          </span>
+        </button>
+        <button class="dashboard-nav-btn fade-in-section" data-panel-btn="loyalty" style="transition-delay:0.12s">
+          <span class="nav-btn-icon" aria-hidden="true">🎁</span>
+          <span class="nav-btn-text">
+            <span class="nav-btn-title">Loyalty Points</span>
+            <span class="nav-btn-meta" id="nav-meta-loyalty">Earn points on every order</span>
+          </span>
+        </button>
+        <button class="dashboard-nav-btn fade-in-section" data-panel-btn="addresses" style="transition-delay:0.18s">
+          <span class="nav-btn-icon" aria-hidden="true">📍</span>
+          <span class="nav-btn-text">
+            <span class="nav-btn-title">Saved Addresses</span>
+            <span class="nav-btn-meta" id="nav-meta-addresses">For faster checkout</span>
+          </span>
+        </button>
+        <button class="dashboard-nav-btn fade-in-section" data-panel-btn="account" style="transition-delay:0.24s">
+          <span class="nav-btn-icon" aria-hidden="true">👤</span>
+          <span class="nav-btn-text">
+            <span class="nav-btn-title">Account Details</span>
+            <span class="nav-btn-meta">Name, email &amp; role</span>
+          </span>
+        </button>
+        <button class="dashboard-nav-btn fade-in-section" data-panel-btn="password" style="transition-delay:0.3s">
+          <span class="nav-btn-icon" aria-hidden="true">🔒</span>
+          <span class="nav-btn-text">
+            <span class="nav-btn-title">Change Password</span>
+            <span class="nav-btn-meta">Keep your account secure</span>
+          </span>
+        </button>
       </nav>
 
       <div class="dashboard-content">

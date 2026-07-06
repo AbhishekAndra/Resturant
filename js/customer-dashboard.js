@@ -76,6 +76,9 @@
     document.getElementById('cd-stat-progress').textContent = orders.filter(function (o) { return liveStatus(o) !== 'delivered' && liveStatus(o) !== 'cancelled'; }).length;
     document.getElementById('cd-stat-delivered').textContent = orders.filter(function (o) { return liveStatus(o) === 'delivered'; }).length;
 
+    var navMetaOrders = document.getElementById('nav-meta-orders');
+    navMetaOrders.textContent = orders.length ? orders.length + (orders.length === 1 ? ' order placed' : ' orders placed') : 'View your order history';
+
     if (orders.length === 0) {
       body.innerHTML = '';
       emptyNote.hidden = false;
@@ -129,12 +132,15 @@
 
     var grid = document.getElementById('cd-favorites-grid');
     var empty = document.getElementById('cd-favorites-empty');
+    var navMetaFavorites = document.getElementById('nav-meta-favorites');
     if (favorites.length === 0) {
       grid.innerHTML = '';
       empty.hidden = false;
+      navMetaFavorites.textContent = 'Your most-ordered picks';
       return;
     }
     empty.hidden = true;
+    navMetaFavorites.textContent = favorites.length + (favorites.length === 1 ? ' dish tracked' : ' dishes tracked');
     grid.innerHTML = favorites.map(function (f) {
       return (
         '<div class="favorite-card">' +
@@ -168,6 +174,7 @@
 
     document.getElementById('cd-loyalty-points').textContent = points + ' pts';
     document.getElementById('cd-loyalty-tier').textContent = tier.name;
+    document.getElementById('nav-meta-loyalty').textContent = points + ' pts · ' + tier.name + ' tier';
 
     var fill = document.getElementById('cd-loyalty-progress-fill');
     var nextNote = document.getElementById('cd-loyalty-next');
@@ -201,11 +208,14 @@
     var addresses = loadAddresses();
     var list = document.getElementById('cd-addresses-list');
     var empty = document.getElementById('cd-addresses-empty');
+    var navMetaAddresses = document.getElementById('nav-meta-addresses');
     if (addresses.length === 0) {
       list.innerHTML = '';
       empty.hidden = false;
+      navMetaAddresses.textContent = 'For faster checkout';
     } else {
       empty.hidden = true;
+      navMetaAddresses.textContent = addresses.length + (addresses.length === 1 ? ' address saved' : ' addresses saved');
       list.innerHTML = addresses.map(function (a) {
         return (
           '<div class="address-card">' +

@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Not Found | Stackly</title>
-<meta name="description" content="The page you're looking for doesn't exist. Head back to Stackly's homepage or browse the menu.">
+<title>Drinks &amp; Desserts | Stackly</title>
+<meta name="description" content="Fresh-pressed juices, cold coffee, and indulgent ice cream and desserts from Stackly — the perfect finish to any meal.">
 <link rel="icon" type="image/webp" href="images/logo-icon.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/error404.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/drinks-desserts.css">
 </head>
-<body data-page="404" class="is-loading">
+<body data-page="drinks-desserts" class="is-loading">
 
 <div id="loader" role="status" aria-live="polite">
   <img src="images/logo-icon.webp" alt="" class="loader-logo" width="96" height="96">
@@ -21,7 +22,7 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="navbar">
+<header class="navbar navbar--transparent">
   <div class="navbar-inner">
     <a href="index.html" class="nav-logo">
       <img src="images/logo.webp" alt="Stackly" width="136" height="40">
@@ -95,29 +96,101 @@
 </div>
 
 <main id="main">
-  <section class="error-section">
-    <div class="container">
-      <img src="images/404-illustration.svg" alt="" class="error-illustration" width="320" height="208">
-      <div class="error-code" aria-hidden="true">404</div>
-      <h1>Page Not Found</h1>
-      <p class="lede">This page seems to have wandered off the menu. It might have been moved, renamed, or never existed in the first place.</p>
 
-      <form class="error-search" role="search" action="menu.html" method="get">
-        <label class="sr-only" for="error-search-input">Search the menu</label>
-        <input type="search" id="error-search-input" name="search" placeholder="Search for a dish…">
-        <button type="submit" class="btn btn-outline">Search</button>
-      </form>
-
-      <div class="error-actions-primary">
-        <a href="index.html" class="btn btn-primary">Go Back Home</a>
+  <!-- ===== Hero ===== -->
+  <section class="hero" style="background-image:url('images/dishes/m30.webp')">
+    <div class="hero-wordmark" aria-hidden="true">
+      <span>S</span><span>T</span><span>A</span><span>C</span><span>K</span><span>L</span><span>Y</span>
+    </div>
+    <div class="container hero-inner">
+      <p class="eyebrow">Sip, Savor, Repeat</p>
+      <h1>Drinks &amp; Desserts</h1>
+      <p class="hero-desc">Fresh-pressed juices, cold coffee, and indulgent ice cream and desserts — the perfect finish to any Stackly meal.</p>
+      <div class="hero-actions">
+        <a href="#juices" class="btn btn-primary">Order Now</a>
+        <a href="menu.html" class="btn btn-outline">View Full Menu</a>
       </div>
-      <div class="error-actions-secondary">
-        <a href="menu.html" class="btn btn-ghost">Browse Menu</a>
-        <a href="about.html" class="btn btn-ghost">About Us</a>
-        <a href="contact.html" class="btn btn-ghost">Contact Support</a>
+    </div>
+    <div class="hero-scroll-cue" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ===== Showcase / gallery breather ===== -->
+  <section class="section showcase-section fade-in-section" id="showcase">
+    <div class="container showcase-inner">
+      <h2 class="showcase-heading">Sweet Sips<br>&amp; Treats</h2>
+      <div class="showcase-grid">
+        <figure class="showcase-item showcase-item-1">
+          <img src="images/dishes/m35.webp" alt="Golden Belgian waffles with berries and maple syrup">
+        </figure>
+        <figure class="showcase-item showcase-item-2">
+          <img src="images/dishes/m46.webp" alt="Funfetti drip cake with sprinkles">
+        </figure>
+        <figure class="showcase-item showcase-item-3">
+          <img src="images/dishes/m30.webp" alt="Mocktail trio with fresh garnish">
+        </figure>
+        <figure class="showcase-item showcase-item-4">
+          <img src="images/dishes/m32.webp" alt="Brownie ice cream delight with caramel drizzle">
+        </figure>
       </div>
     </div>
   </section>
+
+  <!-- ===== Fresh Juices ===== -->
+  <section class="section fade-in-section drinks-category" id="juices">
+    <div class="container">
+      <div class="section-head" style="margin-inline:auto; text-align:center">
+        <p class="eyebrow">Cold-Pressed</p>
+        <h2>Fresh Juices</h2>
+        <p class="lede">No concentrate, no added sugar — just fruit, pressed fresh to order.</p>
+      </div>
+      <div class="dish-grid" id="juice-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== Coffee ===== -->
+  <section class="section section-alt fade-in-section drinks-category" id="coffee">
+    <div class="container">
+      <div class="section-head" style="margin-inline:auto; text-align:center">
+        <p class="eyebrow">Perked Up</p>
+        <h2>Coffee</h2>
+        <p class="lede">Slow-brewed and served over ice, for whenever you need a lift.</p>
+      </div>
+      <div class="dish-grid" id="coffee-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== Ice Cream & Desserts ===== -->
+  <section class="section fade-in-section drinks-category" id="desserts">
+    <div class="container">
+      <div class="section-head" style="margin-inline:auto; text-align:center">
+        <p class="eyebrow">Something Sweet</p>
+        <h2>Ice Cream &amp; Desserts</h2>
+        <p class="lede">Traditional Indian sweets alongside kitchen favorites, made fresh every day.</p>
+      </div>
+      <div class="dish-grid" id="dessert-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== Testimonials ===== -->
+  <section class="section section-alt fade-in-section" id="testimonials">
+    <div class="container">
+      <div class="section-head" style="margin-inline:auto; text-align:center">
+        <p class="eyebrow">Customer Love</p>
+        <h2>What our guests are saying</h2>
+      </div>
+      <div class="testimonial-grid" id="testimonial-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-band fade-in-section">
+    <div class="container cta-inner">
+      <h2>Craving something sweet?</h2>
+      <p>Add a drink or dessert to any order and we'll deliver it fresh, fast, and perfectly chilled.</p>
+      <a href="menu.html" class="btn btn-accent">View Full Menu</a>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
@@ -200,5 +273,6 @@
 <script src="js/auth.js"></script>
 <script src="js/cart.js"></script>
 <script src="js/main.js"></script>
+<script src="js/drinks-desserts.js"></script>
 </body>
 </html>
