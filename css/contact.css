@@ -84,41 +84,6 @@
 }
 .btn-hero-outline:hover { background: var(--color-text-on-dark); color: #171310; }
 
-.hero-scatter-photo {
-  position: absolute;
-  z-index: 2;
-  margin: 0;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 5px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 20px 45px rgba(23, 19, 16, 0.3);
-}
-.hero-scatter-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hero-scatter-main {
-  top: 6%;
-  left: 6%;
-  width: clamp(140px, 14vw, 190px);
-  aspect-ratio: 3 / 4;
-  transform: rotate(-8deg);
-}
-.hero-scatter-1 {
-  bottom: 6%;
-  left: 3%;
-  width: clamp(110px, 11vw, 150px);
-  aspect-ratio: 1 / 1;
-  transform: rotate(10deg);
-}
-.hero-scatter-2 {
-  top: 6%;
-  right: 5%;
-  width: clamp(120px, 12vw, 170px);
-  aspect-ratio: 1 / 1;
-  transform: rotate(9deg);
-}
-@media (max-width: 900px) {
-  .hero-scatter-photo { display: none; }
-}
-
 #contact-form { scroll-margin-top: calc(var(--nav-height) + 1rem); }
 
 .contact-main-section {

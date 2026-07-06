@@ -18,7 +18,10 @@
       "Bash(git push *)",
       "Bash(node --check js/customer-dashboard.js)",
       "Bash(node --check js/admin-dashboard.js)",
-      "Bash(pkill -f \"http-server -p 4199\")"
+      "Bash(pkill -f \"http-server -p 4199\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8793/about.html)",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless --disable-gpu --window-size=1600,1300 --virtual-time-budget=4000 --screenshot=/tmp/shots/about-story.png \"http://localhost:8793/about.html\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless --disable-gpu --window-size=1600,2600 --virtual-time-budget=4000 --screenshot=/tmp/shots/home-story.png \"http://localhost:8793/index.html\")"
     ]
   }
 }

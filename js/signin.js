@@ -9,6 +9,15 @@
   }
 
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var NAME_RE = /^[A-Za-z][A-Za-z '-]*$/;
+
+  /* ---- Full Name: letters only as the user types ---- */
+  var signupNameEl = document.getElementById('su-name');
+  if (signupNameEl) {
+    signupNameEl.addEventListener('input', function () {
+      signupNameEl.value = signupNameEl.value.replace(/[^A-Za-z '-]/g, '');
+    });
+  }
 
   /* ---- Tab switching ---- */
   var tabs = document.querySelectorAll('.role-tab');
@@ -78,7 +87,9 @@
     Object.keys(errs).forEach(function (k) { errs[k].textContent = ''; });
 
     var valid = true;
-    if (!nameEl.value.trim()) { errs.name.textContent = 'Please enter your name.'; valid = false; }
+    var name = nameEl.value.trim();
+    if (!name) { errs.name.textContent = 'Please enter your name.'; valid = false; }
+    else if (!NAME_RE.test(name)) { errs.name.textContent = 'Name can only contain letters, spaces, hyphens and apostrophes.'; valid = false; }
 
     var email = emailEl.value.trim();
     if (!email || !EMAIL_RE.test(email)) { errs.email.textContent = 'Please enter a valid email address.'; valid = false; }
@@ -92,8 +103,8 @@
 
     if (!valid) return;
 
-    Auth.registerUser(nameEl.value.trim(), email, passwordEl.value);
-    Auth.setSession({ email: email.toLowerCase(), name: nameEl.value.trim(), role: 'customer' });
+    Auth.registerUser(name, email, passwordEl.value);
+    Auth.setSession({ email: email.toLowerCase(), name: name, role: 'customer' });
     if (window.refreshAuthNav) refreshAuthNav();
     showToast('Account created — welcome!');
     setTimeout(function () { window.location.href = 'customer-dashboard.html'; }, 500);
