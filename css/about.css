@@ -1,25 +1,5 @@
 /* Stackly — About page styles */
 
-.page-hero-video {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-@media (prefers-reduced-motion: reduce) {
-  .page-hero-video { display: none; }
-}
-
-.page-hero h1,
-.page-hero p,
-.page-hero .breadcrumb a,
-.page-hero .breadcrumb span,
-.page-hero .breadcrumb .sep {
-  color: #000;
-}
-
 .about-story-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -168,10 +148,49 @@
 .stats-row strong { font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-primary-dark); }
 .stats-row span { color: var(--color-text-light); font-size: 0.9rem; }
 
+/* ---------- Meet the Team ---------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.team-card { text-align: center; }
+.team-avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1.1rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
+  color: #171310;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.6rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast);
+}
+.team-card:hover .team-avatar { transform: translateY(-4px) scale(1.04); }
+.team-card h3 { margin-bottom: 0.2rem; font-size: 1.05rem; }
+.team-role {
+  display: block;
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+.team-card p { color: var(--color-text-light); font-size: 0.9rem; }
+
 @media (max-width: 900px) {
   .about-story-grid { grid-template-columns: 1fr; }
   .mv-grid { grid-template-columns: 1fr; }
   .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .team-grid { grid-template-columns: 1fr; }
 }
 
 /* ---------- Spice preference card ---------- */

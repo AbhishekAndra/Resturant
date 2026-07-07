@@ -775,15 +775,27 @@ select:focus-visible,
   background-position: center;
   color: var(--color-text-on-dark);
 }
+.page-hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-hero-video { display: none; }
+}
 .page-hero::before {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(180deg, rgba(13,13,13,0.88), rgba(13,13,13,0.82));
 }
 .page-hero > .container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 .page-hero h1 {
   color: var(--color-text-on-dark);
@@ -792,6 +804,21 @@ select:focus-visible,
   letter-spacing: 0.01em;
 }
 .page-hero p { color: var(--color-text-on-dark-muted); max-width: 620px; margin-top: 0.75rem; }
+
+/* For page-heroes running bright footage (e.g. the dough/kitchen-prep video)
+   — flips hero text to dark so it stays readable, unlike the default light
+   text tuned for darker videos/images. Also drops the dark overlay so the
+   footage keeps its original color instead of being tinted black. */
+.page-hero-bright::before {
+  background: none;
+}
+.page-hero-bright h1,
+.page-hero-bright p,
+.page-hero-bright .breadcrumb a,
+.page-hero-bright .breadcrumb span,
+.page-hero-bright .breadcrumb .sep {
+  color: #000;
+}
 
 /* Animations */
 @keyframes fade-up {

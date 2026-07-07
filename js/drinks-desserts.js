@@ -2,8 +2,8 @@
 (function () {
   'use strict';
 
-  var JUICE_IDS = ['m53', 'm54'];
-  var COFFEE_IDS = ['m55'];
+  var JUICE_IDS = ['m53', 'm54', 'm56'];
+  var COFFEE_IDS = ['m55', 'm57', 'm58'];
   var DESSERT_IDS = ['m14', 'm15', 'm16', 'm32', 'm35', 'm46'];
 
   var qtyState = {}; // per-item pending quantity, before "Add"

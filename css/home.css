@@ -108,6 +108,42 @@
   .hero-scroll-cue span { animation: none; }
 }
 
+/* ---------- Trust Bar ---------- */
+.trust-bar {
+  background: var(--color-bg-dark);
+  border-bottom: 1px solid var(--color-border);
+}
+.trust-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  padding-block: 1.75rem;
+}
+.trust-bar-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  flex: 1 1 200px;
+}
+.trust-bar-item strong {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary-light);
+  white-space: nowrap;
+}
+.trust-bar-star { color: var(--color-primary); margin-left: 0.15rem; }
+.trust-bar-item span {
+  color: var(--color-text-light);
+  font-size: 0.88rem;
+}
+@media (max-width: 700px) {
+  .trust-bar-inner { justify-content: center; text-align: center; padding-block: 1.5rem; }
+  .trust-bar-item { flex: 1 1 45%; justify-content: center; }
+}
+
 /* ---------- Start Your Order ---------- */
 /* Full-bleed split: the photo runs edge-to-edge to the right side of the
    viewport (not boxed inside .container) so it reads as a background panel,
@@ -155,6 +191,23 @@
 }
 .start-order-btn:hover svg { color: #14110b; }
 .start-order-btn-outline { background: transparent; }
+
+.start-order-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-border);
+}
+.start-order-highlights li {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--color-text-light);
+  font-size: 0.92rem;
+}
+.start-order-highlights svg { color: var(--color-primary); flex-shrink: 0; }
 
 .start-order-media {
   position: relative;
@@ -395,7 +448,7 @@
 .gallery-section { background: var(--color-bg-dark); }
 .gallery-strip {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
 }
 .gallery-item {

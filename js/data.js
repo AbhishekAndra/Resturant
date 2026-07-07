@@ -108,7 +108,11 @@ const MENU_ITEMS = [
 
   { id: 'm53', name: 'Fresh Watermelon Juice', category: 'drinks', price: 89, veg: true, popular: false, rating: 4.5, desc: 'Chilled watermelon juice, naturally sweet and refreshing.', emoji: '🍉' },
   { id: 'm54', name: 'Green Apple Juice', category: 'drinks', price: 99, veg: true, popular: false, rating: 4.4, desc: 'Freshly pressed green apple juice with a crisp, tart finish.', emoji: '🍏' },
-  { id: 'm55', name: 'Cold Coffee', category: 'drinks', price: 129, veg: true, popular: true, rating: 4.7, desc: 'Chilled blended coffee topped with a scoop of vanilla ice cream.', emoji: '☕' }
+  { id: 'm56', name: 'Fresh Orange Juice', category: 'drinks', price: 89, veg: true, popular: false, rating: 4.6, desc: 'Freshly squeezed orange juice, bursting with vitamin C.', emoji: '🍊' },
+
+  { id: 'm55', name: 'Cold Coffee', category: 'drinks', price: 129, veg: true, popular: true, rating: 4.7, desc: 'Chilled blended coffee topped with a scoop of vanilla ice cream.', emoji: '☕' },
+  { id: 'm57', name: 'Cappuccino', category: 'drinks', price: 119, veg: true, popular: false, rating: 4.6, desc: 'Espresso topped with steamed milk foam, dusted with cocoa.', emoji: '☕' },
+  { id: 'm58', name: 'Hot Filter Coffee', category: 'drinks', price: 79, veg: true, popular: false, rating: 4.5, desc: 'South Indian filter coffee, strong and frothy.', emoji: '☕' }
 ];
 
 const TESTIMONIALS = [
